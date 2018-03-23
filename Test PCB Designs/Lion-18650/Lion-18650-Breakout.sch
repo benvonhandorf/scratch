@@ -1,0 +1,148 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:switches
+LIBS:relays
+LIBS:motors
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:voltage-regulators
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L +BATT #PWR?
+U 1 1 5A92C514
+P 2400 2650
+F 0 "#PWR?" H 2400 2500 50  0001 C CNN
+F 1 "+BATT" H 2400 2790 50  0000 C CNN
+F 2 "" H 2400 2650 50  0001 C CNN
+F 3 "" H 2400 2650 50  0001 C CNN
+	1    2400 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L -BATT #PWR?
+U 1 1 5A92C528
+P 2600 2650
+F 0 "#PWR?" H 2600 2500 50  0001 C CNN
+F 1 "-BATT" H 2600 2790 50  0000 C CNN
+F 2 "" H 2600 2650 50  0001 C CNN
+F 3 "" H 2600 2650 50  0001 C CNN
+	1    2600 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L +5V #PWR?
+U 1 1 5A92C53C
+P 1400 2650
+F 0 "#PWR?" H 1400 2500 50  0001 C CNN
+F 1 "+5V" H 1400 2790 50  0000 C CNN
+F 2 "" H 1400 2650 50  0001 C CNN
+F 3 "" H 1400 2650 50  0001 C CNN
+	1    1400 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR?
+U 1 1 5A92C550
+P 1550 2650
+F 0 "#PWR?" H 1550 2400 50  0001 C CNN
+F 1 "GND" H 1550 2500 50  0000 C CNN
+F 2 "" H 1550 2650 50  0001 C CNN
+F 3 "" H 1550 2650 50  0001 C CNN
+	1    1550 2650
+	-1   0    0    1   
+$EndComp
+$Comp
+L VCC #PWR?
+U 1 1 5A92C564
+P 3300 2700
+F 0 "#PWR?" H 3300 2550 50  0001 C CNN
+F 1 "VCC" H 3300 2850 50  0000 C CNN
+F 2 "" H 3300 2700 50  0001 C CNN
+F 3 "" H 3300 2700 50  0001 C CNN
+	1    3300 2700
+	0    1    1    0   
+$EndComp
+$Comp
+L AMS1117-3.3 U?
+U 1 1 5A92C578
+P 3250 3350
+F 0 "U?" H 3350 3100 50  0000 C CNN
+F 1 "AMS1117-3.3" H 3250 3600 50  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-223" H 3250 3000 50  0001 C CNN
+F 3 "" H 3350 3100 50  0001 C CNN
+	1    3250 3350
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCP73831 U?
+U 1 1 5A92C5C3
+P 1700 3500
+F 0 "U?" H 1700 3300 60  0000 C CNN
+F 1 "MCP73831" H 1700 3900 60  0000 C CNN
+F 2 "" H 1700 3500 60  0001 C CNN
+F 3 "" H 1700 3500 60  0001 C CNN
+	1    1700 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x02 J?
+U 1 1 5A94ADA1
+P 5700 2850
+F 0 "J?" H 5700 2950 50  0000 C CNN
+F 1 "3.3V Output" H 5700 2650 50  0000 C CNN
+F 2 "" H 5700 2850 50  0001 C CNN
+F 3 "" H 5700 2850 50  0001 C CNN
+	1    5700 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Conn_01x02 J?
+U 1 1 5A94AE2E
+P 5700 3850
+F 0 "J?" H 5700 3950 50  0000 C CNN
+F 1 "5.0V Output" H 5700 3650 50  0000 C CNN
+F 2 "" H 5700 3850 50  0001 C CNN
+F 3 "" H 5700 3850 50  0001 C CNN
+	1    5700 3850
+	1    0    0    -1  
+$EndComp
+$EndSCHEMATC
