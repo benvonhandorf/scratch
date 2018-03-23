@@ -1,0 +1,55 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#
+# Conn_01x05
+#
+DEF Conn_01x05 J 0 40 Y N 1 F N
+F0 "J" 0 300 50 H V C CNN
+F1 "Conn_01x05" 0 -300 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+$FPLIST
+ Connector*:*_??x*mm*
+ Connector*:*1x??x*mm*
+ Pin?Header?Straight?1X*
+ Pin?Header?Angled?1X*
+ Socket?Strip?Straight?1X*
+ Socket?Strip?Angled?1X*
+$ENDFPLIST
+DRAW
+S -50 -195 0 -205 1 1 6 N
+S -50 -95 0 -105 1 1 6 N
+S -50 5 0 -5 1 1 6 N
+S -50 105 0 95 1 1 6 N
+S -50 205 0 195 1 1 6 N
+S -50 250 50 -250 1 1 10 f
+X Pin_1 1 -200 200 150 R 50 50 1 1 P
+X Pin_2 2 -200 100 150 R 50 50 1 1 P
+X Pin_3 3 -200 0 150 R 50 50 1 1 P
+X Pin_4 4 -200 -100 150 R 50 50 1 1 P
+X Pin_5 5 -200 -200 150 R 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# xbox_joystick
+#
+DEF xbox_joystick JOY 0 40 Y Y 1 F N
+F0 "JOY" 0 -750 60 H V C CNN
+F1 "xbox_joystick" 0 600 60 H V C CNN
+F2 "" 0 0 60 H I C CNN
+F3 "" 0 0 60 H I C CNN
+DRAW
+S -300 400 0 -600 0 1 0 N
+X GND 1 200 300 200 L 50 50 1 1 I
+X Xmin 2 200 200 200 L 50 50 1 1 I
+X Xsen 3 200 100 200 L 50 50 1 1 I
+X Xmax 4 200 0 200 L 50 50 1 1 I
+X Ymin 5 200 -100 200 L 50 50 1 1 I
+X Ysen 6 200 -200 200 L 50 50 1 1 I
+X Ymax 7 200 -300 200 L 50 50 1 1 I
+X SW1 8 200 -400 200 L 50 50 1 1 I
+X SW2 9 200 -500 200 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+#End Library
