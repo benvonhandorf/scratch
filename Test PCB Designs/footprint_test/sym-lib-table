@@ -1,0 +1,4 @@
+(sym_lib_table
+  (lib (name 2018-Jan-Footprint-Test-rescue)(type Legacy)(uri ${KIPRJMOD}/2018-Jan-Footprint-Test-rescue.lib)(options "")(descr ""))
+  (lib (name switches_inputs)(type Legacy)(uri /home/benvh/projects/kicad-library/Switches/switches_inputs.lib)(options "")(descr ""))
+)
