@@ -1,7 +1,5 @@
 #!/usr/local/bin/python3
 
-import requests
-from bs4 import BeautifulSoup
 from datetime import datetime
 from influxdb import InfluxDBClient
 import os
@@ -11,15 +9,14 @@ influxHost = os.environ['INFLUX_HOST']
 influxUser = os.environ['INFLUX_USER']
 influxPassword = os.environ['INFLUX_PASSWORD']
 
-mqttHost = os.environ['MQTT_HOST']
-mqttUser = os.environ['MQTT_USER']
-mqttPassword = os.environ['MQTT_PASSWORD']
-
-antenna = os.environ['ANTENNA']
-
-targetCallSign = 'KN4COI'
+userCallsign = 'KN4COI'
+homeGridSquare = 'EM79'
 
 print("Influx configuration: {} - {}".format(influxHost, influxUser))
+
+with open('~/.local/share/WSJT-X/ALL.TXT', 'r') as logfile:
+  raw_logs = logfile.read()
+  log_lines = raw_logs.split('\n')
 
 class CacheResponse:
   def __init__(self, cacheData):
