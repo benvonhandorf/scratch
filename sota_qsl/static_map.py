@@ -9,7 +9,7 @@ class StaticMapDownloader:
         params = {"center": f"{latitude},{longitude}",
                   "zoom": "12",
                   "maptype": "terrain",
-                  "size": "640x640",
+                  "size": "320x200",
                   "scale": "2",
                   "markers": f"{latitude},{longitude}",
                   "key": self.key}
