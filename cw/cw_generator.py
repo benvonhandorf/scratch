@@ -38,10 +38,10 @@ class CWGenerator:
         "7":"--...",
         "8":"---..",
         "9":"----.",
-        " ":" "
+        " ":"_"
         }
 
-    def convert(s):
+    def generate(s):
         output = ""
 
         s = s.upper()
