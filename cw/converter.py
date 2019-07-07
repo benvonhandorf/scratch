@@ -25,24 +25,31 @@ if __name__ == "__main__":
 
     polly_api = PollyApi(aws_polly_key_id, aws_secret_access_key)
 
-    cw_synthesizer = CWSynthesizer(20, 20, 5)
+    cw_synthesizer = CWSynthesizer(20, 5, 5)
 
     x = 0
-    full_audio = AudioSegment.silent(duration=0)
+
+    full_audio = AudioSegment.silent(duration=2000)
+    switch_to_tts_gap = AudioSegment.silent(duration=0)
 
     for input_line in fileinput.input(files=args.files if len(args.files) > 0 else ('-', )):
+        if x > 0:
+            print("Line break")
+            full_audio = full_audio + cw_synthesizer.synthesize("_")
+
         cw_text = CWGenerator.generate(input_line)
+        print(cw_text)
+
         cw_audio = cw_synthesizer.synthesize(cw_text)
 
-        full_audio = full_audio + cw_audio
+        full_audio = full_audio + cw_audio + switch_to_tts_gap
 
-        # filename = f"{x}.mp3"
-        # polly_api.synthesize_morse_code(input_line, filename)
-        # 
+        filename = f"{x}.mp3"
+        polly_api.synthesize_morse_code(input_line, filename)
+        
+        tts_audio = AudioSegment.from_mp3(filename)
 
-        # line_audio = AudioSegment(filename)
-
-        # full_audio = full_audio + line_audio
+        full_audio = full_audio + tts_audio + switch_to_tts_gap
         x = x + 1
 
     if x > 0:
