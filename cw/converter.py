@@ -33,6 +33,7 @@ if __name__ == "__main__":
     switch_to_tts_gap = AudioSegment.silent(duration=0)
 
     for input_line in fileinput.input(files=args.files if len(args.files) > 0 else ('-', )):
+        input_line = input_line.strip()
         if x > 0:
             print("Line break")
             full_audio = full_audio + cw_synthesizer.synthesize("_")
