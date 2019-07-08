@@ -12,7 +12,7 @@ class KochGenerator:
 
 
 	def generate(self, lesson_number, group_size, group_count):
-		characters = KochGenerator.lesson_characters[:lesson_number + 1]
+		characters = self.character_set(lesson_number)
 
 		output = ""
 
@@ -26,3 +26,5 @@ class KochGenerator:
 
 		return output
 
+	def character_set(self, lesson_number):
+		return KochGenerator.lesson_characters[:lesson_number + 1]

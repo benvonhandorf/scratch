@@ -33,7 +33,7 @@ class PollyApi:
 
         if file_path.is_file():
             #We have this desired text in cache already.  Use it
-            return filename
+            return file_path
 
 
         response = self.polly_client.synthesize_speech(VoiceId=self.voice_id,
