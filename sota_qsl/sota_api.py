@@ -4,13 +4,15 @@ import json
 #https://sota.org.uk/Sota-API/Resources
 
 class SotaApi:
-    base_api = "http://api.sota.org.uk/api/"
+    base_api = "http://api2.sota.org.uk/api/"
+
 
     def __init__(self, login, key):
         self.login = login
         self.key = key
 
     def retrieve_peak(self, associationCode, summitCode):
+        
         result = SotaPeak('')
         return result
 
