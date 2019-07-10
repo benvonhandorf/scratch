@@ -1,32 +1,33 @@
-/usr/bin/python3 converter.py --output reinforcement_lesson9.mp3 --koch 9 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson10.mp3 --koch 10 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson11.mp3 --koch 11 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson12.mp3 --koch 12 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson13.mp3 --koch 13 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson14.mp3 --koch 14 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson15.mp3 --koch 15 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson16.mp3 --koch 16 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson17.mp3 --koch 17 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson18.mp3 --koch 18 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson19.mp3 --koch 19 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson20.mp3 --koch 20 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson21.mp3 --koch 21 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson22.mp3 --koch 22 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson23.mp3 --koch 23 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson24.mp3 --koch 24 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson25.mp3 --koch 25 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson26.mp3 --koch 26 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson27.mp3 --koch 27 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson28.mp3 --koch 28 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson29.mp3 --koch 29 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson30.mp3 --koch 30 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson31.mp3 --koch 31 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson32.mp3 --koch 32 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson33.mp3 --koch 33 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson34.mp3 --koch 34 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson35.mp3 --koch 35 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson36.mp3 --koch 36 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson37.mp3 --koch 37 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson38.mp3 --koch 38 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson39.mp3 --koch 39 --koch_group_size 1 --koch_group_count 2000
-/usr/bin/python3 converter.py --output reinforcement_lesson40.mp3 --koch 40 --koch_group_size 1 --koch_group_count 2000
+/usr/bin/python3 converter.py --output reinforcement_lesson8.mp3 --koch 8 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson9.mp3 --koch 9 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson10.mp3 --koch 10 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson11.mp3 --koch 11 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson12.mp3 --koch 12 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson13.mp3 --koch 13 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson14.mp3 --koch 14 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson15.mp3 --koch 15 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson16.mp3 --koch 16 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson17.mp3 --koch 17 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson18.mp3 --koch 18 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson19.mp3 --koch 19 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson20.mp3 --koch 20 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson21.mp3 --koch 21 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson22.mp3 --koch 22 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson23.mp3 --koch 23 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson24.mp3 --koch 24 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson25.mp3 --koch 25 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson26.mp3 --koch 26 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson27.mp3 --koch 27 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson28.mp3 --koch 28 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson29.mp3 --koch 29 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson30.mp3 --koch 30 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson31.mp3 --koch 31 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson32.mp3 --koch 32 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson33.mp3 --koch 33 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson34.mp3 --koch 34 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson35.mp3 --koch 35 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson36.mp3 --koch 36 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson37.mp3 --koch 37 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson38.mp3 --koch 38 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson39.mp3 --koch 39 --group_size 1 --group_count 2000 --tts_delay 750
+/usr/bin/python3 converter.py --output reinforcement_lesson40.mp3 --koch 40 --group_size 1 --group_count 2000 --tts_delay 750

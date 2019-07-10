@@ -12,8 +12,11 @@ class KochGenerator:
 
 
 	def generate(self, lesson_number, group_size, group_count):
-		characters = self.character_set(lesson_number)
+		characters = self.koch_character_set(lesson_number)
 
+		return self.generate_for_characters(characters, group_size, group_count)
+
+	def generate_for_characters(self, characters, group_size, group_count):
 		output = ""
 
 		for x in range(group_count):
@@ -26,5 +29,5 @@ class KochGenerator:
 
 		return output
 
-	def character_set(self, lesson_number):
+	def koch_character_set(self, lesson_number):
 		return KochGenerator.lesson_characters[:lesson_number + 1]
