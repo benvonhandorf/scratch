@@ -7,6 +7,8 @@ from koch_generator import KochGenerator
 import os
 from polly_api import PollyApi
 from pydub import AudioSegment
+import re
+import random
 
 def sample_for_character(character, cw_synthesizer, polly_api, gap_audio):
     cw_text = CWGenerator.generate(character)
@@ -46,6 +48,28 @@ def process_lines(lines, cw_synthesizer, polly_api, full_audio, switch_to_tts_ga
 
     return full_audio
 
+def find_words(character_set, max_length):
+    raw_exp = f"^[{''.join(character_set)}]{{1,{max_length}}}$"
+    print(raw_exp)
+    exp = re.compile(raw_exp, re.IGNORECASE)
+
+    words = []
+    x = 0
+    with open("common_words.txt", "r") as dictionary:
+        line = dictionary.readline().strip()
+
+        while line:
+            x = x + 1
+
+            if exp.match(line):
+                words.append(line)
+
+            line = dictionary.readline().strip()
+
+    print(f"Found {len(words)} words matching character set in dictionary of {x} words")
+
+    return words
+
 if __name__ == "__main__":
 
     argument_parser = argparse.ArgumentParser()
@@ -60,8 +84,9 @@ if __name__ == "__main__":
     argument_parser.add_argument('--letters', type=str, help='Only specific letters')
     argument_parser.add_argument('--output', default="morse_audio.mp3", type=str, help='Output file name')
     argument_parser.add_argument('--no_tts', dest="tts", action='store_false', help='Disable TTS')
+    argument_parser.add_argument('--words', dest="words", action='store_true', help='Disable TTS')
     argument_parser.add_argument('files', metavar='FILES', nargs='*', help='Files to convert, stdin if none')
-    argument_parser.set_defaults(tts=True)
+    argument_parser.set_defaults(tts=True, words=False)
 
     args = argument_parser.parse_args()
 
@@ -82,19 +107,41 @@ if __name__ == "__main__":
 
     if args.koch != -1 or args.letters is not None:
         koch_generator = KochGenerator()
+        text = ""
 
         if args.koch != -1:
             print(f"Koch generation\nLesson {args.koch}\n{args.group_count} groups of {args.group_size} characters")
 
             character_set = koch_generator.koch_character_set(args.koch)
 
-            text = koch_generator.generate(args.koch, args.group_size, args.group_count)
         else:
             character_set = [char for char in args.letters]
 
             print(f"Fixed set generation\nCharacters: {character_set}\n{args.group_count} groups of {args.group_size} characters")
 
-            text = koch_generator.generate_for_characters(character_set, args.group_size, args.group_count)
+
+        if args.words:
+            print(f"Word based")
+
+            word_list = find_words(character_set, args.group_size)
+
+            if len(word_list) == 0:
+                print("No words found matching criteria - exiting")
+                exit()
+
+            rand = random.Random()
+
+            for i in range(0, args.group_count):
+                idx = rand.randint(0, len(word_list))
+
+                word = word_list[idx]
+
+                text = text + word + "\n"
+
+            print(text)
+
+        else:
+            text = koch_generator.generate(character_set, args.group_size, args.group_count)
         
         lines = text.replace(" ", "_").split("\n")
 

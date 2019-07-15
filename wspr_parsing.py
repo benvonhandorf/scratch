@@ -6,99 +6,113 @@ from datetime import datetime
 from influxdb import InfluxDBClient
 import os
 from radio_utils import FrequencyUtils
+import argparse
 
-influxHost = os.environ['INFLUX_HOST']
-influxUser = os.environ['INFLUX_USER']
-influxPassword = os.environ['INFLUX_PASSWORD']
-
-mqttHost = os.environ['MQTT_HOST']
-mqttUser = os.environ['MQTT_USER']
-mqttPassword = os.environ['MQTT_PASSWORD']
-
-antenna = os.environ['ANTENNA']
-
-targetCallSign = 'KN4COI'
-
-print("Influx configuration: {} - {}".format(influxHost, influxUser))
+# mqttHost = os.environ['MQTT_HOST']
+# mqttUser = os.environ['MQTT_USER']
+# mqttPassword = os.environ['MQTT_PASSWORD']
 
 class CacheResponse:
-  def __init__(self, cacheData):
-    self.text = cacheData
+    def __init__(self, cacheData):
+        self.text = cacheData
 
-cacheData = None
 
-try:
-  cacheFile = open("query_cache.html", "r")
+if __name__ == "__main__":
 
-  cacheData = cacheFile.read()
-except FileNotFoundError:
-  pass
+    influxHost = os.environ['INFLUX_HOST']
+    influxUser = os.environ['INFLUX_USER']
+    influxPassword = os.environ['INFLUX_PASSWORD']
 
-if cacheData is None or len(cacheData) == 0:
-  print("Retrieving data")
+    argument_parser = argparse.ArgumentParser()
+    argument_parser.add_argument('--call', default="KN4COI",
+        help="Call to import")
+    argument_parser.add_argument('--antenna', default="20m dipole",
+        help="Call to import")
 
-  formData = {'band' : 'All',
-            'count' : '1000',
-            'call' : targetCallSign,
-            'reporter': targetCallSign,
-            'timelimit' : '86400',
-            'sortby' : 'date',
-            'sortrev' : '1',
-            'excludespecial' : '1',
-            'op' : 'Update',
-            'form_build_id': 'form-eFzYLp8WcZSvZitd_dXfpmjb-atUHieH7kid8v066Sk',
-            'form_id' : 'wsprnet_spotquery_form'}
+    args = argument_parser.parse_args()
 
-  response = requests.post('http://wsprnet.org/drupal/wsprnet/spotquery', data=formData)
+    antenna = args.antenna
+    targetCallSign = args.call
 
-  with open("{}.log".format(datetime.now().isoformat()), "w") as resultFile:
-    resultFile.write(response.text)
+    print(f"Querying {targetCallSign} using antenna {antenna}")
 
-else:
-  response = CacheResponse(cacheData)
+    print("Influx configuration: {} - {}".format(influxHost, influxUser))
 
-soup = BeautifulSoup(response.text, 'html.parser')
+    cacheData = None
 
-table = soup.find('table')
+    try:
+        cacheFile = open("query_cache.html", "r")
 
-rows = table.find_all('tr')
+        cacheData = cacheFile.read()
+    except FileNotFoundError:
+        pass
 
-entries = []
+    if cacheData is None or len(cacheData) == 0:
+        print("Retrieving data")
 
-for row in rows:
-  dataItems = row.find_all('td')
+        formData = {'band' : 'All',
+                  'count' : '1000',
+                  'call' : targetCallSign,
+                  'reporter': targetCallSign,
+                  'timelimit' : '86400',
+                  'sortby' : 'date',
+                  'sortrev' : '1',
+                  'excludespecial' : '1',
+                  'op' : 'Update',
+                  'form_build_id': 'form-eFzYLp8WcZSvZitd_dXfpmjb-atUHieH7kid8v066Sk',
+                  'form_id' : 'wsprnet_spotquery_form'}
 
-  if len(dataItems) == 11:
-    # Appears to be a valid data row
-    spottimeraw, callsign, frequency, snr, drift, grid, power, spotter, spotgrid, distance, azimuth = dataItems
+        response = requests.post('http://wsprnet.org/drupal/wsprnet/spotquery', data=formData)
 
-    spottime = datetime.strptime(spottime.text.strip(), '%Y-%m-%d %H:%M')
+        with open("{}.log".format(datetime.now().isoformat()), "w") as resultFile:
+            resultFile.write(response.text)
+    else:
+        response = CacheResponse(cacheData)
 
-    entry = {}
-    entry['measurement'] = 'spot'
-    entry['time'] = spottime.isoformat() + 'Z'
-    entry['tags'] = {'callsign': callsign.text.strip(),
-                      'spotter': spotter.text.strip(),
-                      'frequency': float(frequency.text.strip()),
-                      'band': FrequencyUtils.band_for_frequency(float(frequency.text.strip()), False),
-                      'antenna': antenna,
-                      'type': 'wspr'
-                      }
-    entry['fields'] = {
-                      'power': float(power.text.strip()),
-                      'snr': float(snr.text.strip()),
-                      'drift': float(snr.text.strip()),
-                      'grid': grid.text.strip(),
-                      'spotgrid': spotgrid.text.strip(),
-                      'distance': float(distance.text.strip()),
-                      'value': float(distance.text.strip()),
-                      'azimuth': float(azimuth.text.strip())}
+    soup = BeautifulSoup(response.text, 'html.parser')
 
-    entries.append(entry)
+    table = soup.find('table')
 
-print("Importing {} entries".format(len(entries)))
+    rows = table.find_all('tr')
 
-influxClient = InfluxDBClient(influxHost, username=influxUser, password=influxPassword)
-influxClient.switch_database('radio')
-influxClient.write_points(entries)
+    entries = []
+
+    for row in rows:
+        dataItems = row.find_all('td')
+
+        if len(dataItems) == 11:
+            # Appears to be a valid data row
+            spottimeraw, callsign, frequency, snr, drift, grid, power, spotter, spotgrid, distance, azimuth = dataItems
+
+            spottime = datetime.strptime(spottimeraw.text.strip(), '%Y-%m-%d %H:%M')
+
+            entry = {}
+            entry['measurement'] = 'spot'
+            entry['time'] = spottime.isoformat() + 'Z'
+            entry['tags'] = {'callsign': callsign.text.strip(),
+                            'spotter': spotter.text.strip(),
+                            'frequency': float(frequency.text.strip()),
+                            'band': FrequencyUtils.band_for_frequency(float(frequency.text.strip()), False),
+                            'antenna': antenna,
+                            'type': 'wspr'
+                            }
+            entry['fields'] = {
+                            'power': float(power.text.strip()),
+                            'snr': float(snr.text.strip()),
+                            'drift': float(snr.text.strip()),
+                            'grid': grid.text.strip(),
+                            'spotgrid': spotgrid.text.strip(),
+                            'distance': float(distance.text.strip()),
+                            'value': float(distance.text.strip()),
+                            'azimuth': float(azimuth.text.strip())}
+
+            entries.append(entry)
+        else:
+            print(f"Unexpected data - {row}")
+
+    print("Importing {} entries".format(len(entries)))
+
+    influxClient = InfluxDBClient(influxHost, username=influxUser, password=influxPassword)
+    influxClient.switch_database('radio')
+    influxClient.write_points(entries)
 

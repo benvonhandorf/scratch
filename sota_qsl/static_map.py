@@ -4,10 +4,10 @@ class StaticMapDownloader:
     def __init__(self, key):
         self.key = key
 
-    def retrieve_map(self, latitude, longitude, filename):
+    def retrieve_map(self, latitude, longitude, filename, zoom=12):
         url = "https://maps.googleapis.com/maps/api/staticmap"
         params = {"center": f"{latitude},{longitude}",
-                  "zoom": "12",
+                  "zoom": zoom,
                   "maptype": "terrain",
                   "size": "320x200",
                   "scale": "2",
@@ -21,3 +21,5 @@ class StaticMapDownloader:
         if response:
             with open(filename, "wb") as resultFile:
                 resultFile.write(response.content)
+        else:
+          print(f"Failed to retrieve map - {response}")

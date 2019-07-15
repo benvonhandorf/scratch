@@ -22,10 +22,12 @@ class PollyApi:
         is_characters = False
 
         if morse_code_text.upper() == morse_code_text:
-            ssml = f'<say-as interpret-as="characters">{morse_code_text}</say-as>'
             is_characters = True
 
-        ssml = f'<speak>{ssml}</speak>'
+        if is_characters:
+            ssml = f'<say-as interpret-as="characters">{morse_code_text}</say-as>'
+        else:
+            ssml = f'<speak>{ssml}</speak>'
 
         filename = self.filename_for(morse_code_text, is_characters)
 
