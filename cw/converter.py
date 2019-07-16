@@ -39,7 +39,7 @@ def process_lines(lines, cw_synthesizer, polly_api, full_audio, switch_to_tts_ga
 
         if polly_api is not None:
             filename = polly_api.synthesize_morse_code(input_line)
-            
+
             tts_audio = AudioSegment.from_mp3(filename)
 
             full_audio = full_audio + tts_audio + switch_to_tts_gap
@@ -78,6 +78,7 @@ if __name__ == "__main__":
     argument_parser.add_argument('--aws_secret_access_key', default=os.environ['AWS_SECRET_ACCESS_KEY'],
         help="AWS Secret Access Key, can also be provided via environment variable AWS_SECRET_ACCESS_KEY")
     argument_parser.add_argument('--koch', default=-1, type=int, help='Koch system lesson to use for random text generation')
+    argument_parser.add_argument('--last', default=1000, type=int, help='Only last n eligible characters')
     argument_parser.add_argument('--group_size', default=5, type=int, help='Number of characters per group')
     argument_parser.add_argument('--group_count', default=20, type=int, help='Number of character groups')
     argument_parser.add_argument('--tts_delay', default=200, type=int, help='Milliseconds to delay text to speech')
@@ -90,7 +91,7 @@ if __name__ == "__main__":
 
     args = argument_parser.parse_args()
 
-    if args.aws_polly_key_id is None or args.aws_secret_access_key or args.tts == False:
+    if args.aws_polly_key_id is None or args.aws_secret_access_key is None or args.tts == False:
         print("TTS Disabled")
 
         polly_api = None
@@ -110,15 +111,18 @@ if __name__ == "__main__":
         text = ""
 
         if args.koch != -1:
-            print(f"Koch generation\nLesson {args.koch}\n{args.group_count} groups of {args.group_size} characters")
+            print(f"Koch generation\nLesson {args.koch}")
 
             character_set = koch_generator.koch_character_set(args.koch)
 
         else:
             character_set = [char for char in args.letters]
 
-            print(f"Fixed set generation\nCharacters: {character_set}\n{args.group_count} groups of {args.group_size} characters")
+            print(f"Fixed set generation")
 
+        character_set = character_set[:args.last]
+
+        print(f"Characters: {character_set}\n{args.group_count} groups of {args.group_size} characters")
 
         if args.words:
             print(f"Word based")
@@ -132,7 +136,7 @@ if __name__ == "__main__":
             rand = random.Random()
 
             for i in range(0, args.group_count):
-                idx = rand.randint(0, len(word_list))
+                idx = rand.randint(0, len(word_list) - 1)
 
                 word = word_list[idx]
 
@@ -141,7 +145,7 @@ if __name__ == "__main__":
             print(text)
 
         else:
-            text = koch_generator.generate(character_set, args.group_size, args.group_count)
+            text = koch_generator.generate_for_characters(character_set, args.group_size, args.group_count)
         
         lines = text.replace(" ", "_").split("\n")
 
