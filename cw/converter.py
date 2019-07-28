@@ -120,7 +120,7 @@ if __name__ == "__main__":
 
             print(f"Fixed set generation")
 
-        character_set = character_set[:args.last]
+        character_set = character_set[-args.last:]
 
         print(f"Characters: {character_set}\n{args.group_count} groups of {args.group_size} characters")
 
