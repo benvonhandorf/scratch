@@ -57,8 +57,6 @@ if __name__ == "__main__":
     argument_parser.add_argument('--static_maps_key', 
         help="Google Maps Static Map API key to use for map generation")
 
-    argument_parser.set_defaults(tts=True)
-
     args = argument_parser.parse_args()
 
 
