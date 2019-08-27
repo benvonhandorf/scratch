@@ -9,6 +9,25 @@ class SotaApi:
     def __init__(self):
         pass
 
+    def retrieve_association(self, associationCode):
+        url = f"{SotaApi.base_api}associations/{associationCode}"
+
+        response = requests.get(url)
+        
+        result = json.loads(response.text)
+
+        return result
+
+
+    def retrieve_region(self, associationCode, regionCode):
+        url = f"{SotaApi.base_api}regions/{associationCode}/{regionCode}"
+
+        response = requests.get(url)
+        
+        result = json.loads(response.text)
+
+        return result
+
     def retrieve_peak_with_association(self, associationCode, summitCode):
         url = f"{SotaApi.base_api}summits/{associationCode}/{summitCode}"
 

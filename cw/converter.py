@@ -4,6 +4,7 @@ import fileinput
 from cw_generator import CWGenerator
 from cw_synthesizer import CWSynthesizer
 from koch_generator import KochGenerator
+from cwops_generator import CWOpsGenerator
 import os
 from polly_api import PollyApi
 from pydub import AudioSegment
@@ -70,6 +71,20 @@ def find_words(character_set, max_length):
 
     return words
 
+def generate_for_characters(characters, group_size, group_count):
+    rnd = random.Random()
+    output = ""
+
+    for x in range(group_count):
+        if len(output) > 0:
+            output = output + "\n"
+
+        for y in range(group_size):
+            char_index = rnd.randint(0, len(characters) - 1)
+            output = output + characters[char_index]
+
+    return output
+
 if __name__ == "__main__":
 
     argument_parser = argparse.ArgumentParser()
@@ -78,6 +93,7 @@ if __name__ == "__main__":
     argument_parser.add_argument('--aws_secret_access_key', default=os.environ['AWS_SECRET_ACCESS_KEY'],
         help="AWS Secret Access Key, can also be provided via environment variable AWS_SECRET_ACCESS_KEY")
     argument_parser.add_argument('--koch', default=-1, type=int, help='Koch system lesson to use for random text generation')
+    argument_parser.add_argument('--cwops', default=-1, type=int, help='CWOps lesson to use for random text generation')
     argument_parser.add_argument('--last', default=1000, type=int, help='Only last n eligible characters')
     argument_parser.add_argument('--group_size', default=5, type=int, help='Number of characters per group')
     argument_parser.add_argument('--group_count', default=20, type=int, help='Number of character groups')
@@ -106,23 +122,31 @@ if __name__ == "__main__":
     full_audio = AudioSegment.silent(duration=2000)
     switch_to_tts_gap = AudioSegment.silent(duration=args.tts_delay)
 
-    if args.koch != -1 or args.letters is not None:
+    if args.koch != -1:
+        print(f"Koch generation\nLesson {args.koch}")
+
         koch_generator = KochGenerator()
-        text = ""
 
-        if args.koch != -1:
-            print(f"Koch generation\nLesson {args.koch}")
+        character_set = koch_generator.character_set(args.koch)
 
-            character_set = koch_generator.koch_character_set(args.koch)
+    if args.cwops != -1:
+        print(f"CWOps generation\nLesson {args.cwops}")
 
-        else:
-            character_set = [char for char in args.letters]
+        cwops_generator = CWOpsGenerator()
 
-            print(f"Fixed set generation")
+        character_set = cwops_generator = cwops_generator.character_set(args.cwops)
 
+    if args.letters is not None:
+        print(f"Fixed set generation")
+
+        character_set = [char for char in args.letters]
+
+    if character_set is not None:
         character_set = character_set[-args.last:]
 
         print(f"Characters: {character_set}\n{args.group_count} groups of {args.group_size} characters")
+
+        text = ""
 
         if args.words:
             print(f"Word based")
@@ -134,9 +158,15 @@ if __name__ == "__main__":
                 exit()
 
             rand = random.Random()
+            last_word = -1
 
             for i in range(0, args.group_count):
                 idx = rand.randint(0, len(word_list) - 1)
+
+                while idx == last_word and len(word_list) > 2:
+                    idx = rand.randint(0, len(word_list) - 1)
+
+                last_word = idx
 
                 word = word_list[idx]
 
@@ -145,7 +175,7 @@ if __name__ == "__main__":
             print(text)
 
         else:
-            text = koch_generator.generate_for_characters(character_set, args.group_size, args.group_count)
+            text = generate_for_characters(character_set, args.group_size, args.group_count)
         
         lines = text.replace(" ", "_").split("\n")
 
