@@ -47,6 +47,32 @@ def populate_card(dwg, card, peak, static_maps):
     map_image = card.add(dwg.image(href=static_map_filename.resolve().as_uri(), size=("3.75in", "2in"), insert=("0.25in", "3.5in")))
     map_image.fit()
 
+def populate_log(dwg, cardå):
+    rect = card.add(dwg.rect(size=card_size))
+    rect.fill("none")
+    rect.stroke("black")
+
+    activationMarker = "*" if peak.activationCount is None else activationCount
+
+    card.add(dwg.text(peak.name, insert=min_insets))
+    card.add(dwg.text(f"SOTA: {peak.summitCode}  @  {peak.points}pts{activationMarker}", insert=(min_insets[0], "0.5in")))
+    card.add(dwg.text(f"POTA:", insert=("2.5in", "0.5in")))
+    card.add(dwg.text(f"Ele: {peak.altM}m/{peak.altFt}'", insert=(".25in", "0.75in")))
+    card.add(dwg.text(f"Loc: {peak.locator}   {peak.latitude}, {peak.longitude}", insert=(".25in", "1in")))
+    card.add(dwg.text(f"Date (UTC):", insert=(".25in", "1.25in")))
+    card.add(dwg.text(f"WX:", insert=(".25in", "1.5in")))
+    card.add(dwg.text(f"Notes:", insert=(".25in", "2in")))
+
+    static_map_filename = Path(peak.summitCode.replace("/", "-") + ".png")
+    # static_map_filename = Path("test.png")
+
+    if not static_map_filename.is_file():
+        print(f"Retrieving static map for {peak.summitCode}: {peak.latitude}, {peak.longitude}")
+        static_maps.retrieve_map(peak.latitude, peak.longitude, static_map_filename)
+
+    map_image = card.add(dwg.image(href=static_map_filename.resolve().as_uri(), size=("3.75in", "2in"), insert=("0.25in", "3.5in")))
+    map_image.fit()
+
 if __name__ == "__main__":
 
     argument_parser = argparse.ArgumentParser()
@@ -95,25 +121,32 @@ if __name__ == "__main__":
     populate_card(dwg, card, peaks[0], static_maps)
     dwg.add(card)
 
+    card = dwg.svg(insert=(card_size[0], 0),size=card_size)
+
     if len(peaks) > 1:
-        card = dwg.svg(insert=(card_size[0], 0),size=card_size)
         populate_card(dwg, card, peaks[1], static_maps)
         dwg.add(card)
+    else:
+        populate_log(dwg, card)
 
-    if len(peaks) > 2:
-        card = dwg.svg(insert=(0, card_size[1]),size=card_size)
+    card = dwg.svg(insert=(0, card_size[1]),size=card_size)
+    if len(peaks) > 2:    
         populate_card(dwg, card, peaks[2], static_maps)
         dwg.add(card)
+    else:
+        populate_log(dwg, card)
 
+    card = dwg.svg(insert=(card_size[0], card_size[1]),size=card_size)
     if len(peaks) > 3:
-        card = dwg.svg(insert=(card_size[0], card_size[1]),size=card_size)
         populate_card(dwg, card, peaks[3], static_maps)
         dwg.add(card)
+    else:
+        populate_log(dwg, card)
 
     dwg.save()
 
-    saved_svg = svg2rlg("file.svg")
-    renderPDF.drawToFile(saved_svg, "reference_card.pdf")
+    # saved_svg = svg2rlg("file.svg")
+    # renderPDF.drawToFile(saved_svg, "reference_card.pdf")
 
 
 # latitude = 48.6319
