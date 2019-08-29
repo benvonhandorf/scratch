@@ -67,7 +67,7 @@ def find_words(character_set, max_length):
 
             line = dictionary.readline().strip()
 
-    print(f"Found {len(words)} words matching character set in dictionary of {x} words")
+    print(f"Found {len(words)} words matching character set in dictionary of {x} words: {words}")
 
     return words
 
@@ -92,6 +92,8 @@ if __name__ == "__main__":
         help="AWS Key ID, can also be provided via environment variable AWS_POLLY_KEY_ID")
     argument_parser.add_argument('--aws_secret_access_key', default=os.environ['AWS_SECRET_ACCESS_KEY'],
         help="AWS Secret Access Key, can also be provided via environment variable AWS_SECRET_ACCESS_KEY")
+    argument_parser.add_argument('--speed', default=20, type=int, help='WPM speed')
+    argument_parser.add_argument('--speed_farnsworth', default=-1, type=int, help='Farnsworth spacing')
     argument_parser.add_argument('--koch', default=-1, type=int, help='Koch system lesson to use for random text generation')
     argument_parser.add_argument('--cwops', default=-1, type=int, help='CWOps lesson to use for random text generation')
     argument_parser.add_argument('--last', default=1000, type=int, help='Only last n eligible characters')
@@ -111,13 +113,19 @@ if __name__ == "__main__":
         print("TTS Disabled")
 
         polly_api = None
+        args.switch_to_tts_gap = 0
     else:
         aws_polly_key_id = args.aws_polly_key_id
         aws_secret_access_key = args.aws_secret_access_key
 
         polly_api = PollyApi(aws_polly_key_id, aws_secret_access_key)
 
-    cw_synthesizer = CWSynthesizer(20, 5, 5)
+    if args.speed_farnsworth == -1:
+        farnsworth = args.speed
+    else:
+        farnsworth = args.speed_farnsworth
+
+    cw_synthesizer = CWSynthesizer(args.speed, args.speed, farnsworth)
 
     full_audio = AudioSegment.silent(duration=2000)
     switch_to_tts_gap = AudioSegment.silent(duration=args.tts_delay)
@@ -171,8 +179,6 @@ if __name__ == "__main__":
                 word = word_list[idx]
 
                 text = text + word + "\n"
-
-            print(text)
 
         else:
             text = generate_for_characters(character_set, args.group_size, args.group_count)
