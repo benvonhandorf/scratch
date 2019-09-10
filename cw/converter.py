@@ -23,27 +23,39 @@ def sample_for_character(character, cw_synthesizer, polly_api, gap_audio):
     else:
         return cw_synthesizer.synthesize(cw_text)
 
-def process_lines(lines, cw_synthesizer, polly_api, full_audio, switch_to_tts_gap):
+def process_lines(lines, cw_synthesizer, polly_api, tts_before, tts_after, full_audio, group_delay, switch_to_tts_gap, repeat):
     x = 0
 
     for input_line in lines:
         input_line = input_line.strip()
 
+        print(f"Line: {input_line}")
+
         if x > 0:
-            full_audio = full_audio + cw_synthesizer.synthesize("_")
+            full_audio = full_audio + group_delay
 
         cw_text = CWGenerator.generate(input_line)
 
         cw_audio = cw_synthesizer.synthesize(cw_text)
 
-        full_audio = full_audio + cw_audio + switch_to_tts_gap
+        tts_audio = None
 
-        if polly_api is not None:
+        if polly_api is not None and tts_before:
             filename = polly_api.synthesize_morse_code(input_line)
 
             tts_audio = AudioSegment.from_mp3(filename)
 
             full_audio = full_audio + tts_audio + switch_to_tts_gap
+
+        for rpt in range(0, repeat):
+            full_audio = full_audio + cw_audio
+
+        if polly_api is not None and tts_after:
+            filename = polly_api.synthesize_morse_code(input_line)
+
+            tts_audio = AudioSegment.from_mp3(filename)
+
+            full_audio = full_audio + switch_to_tts_gap + tts_audio
 
         x = x + 1
 
@@ -99,13 +111,17 @@ if __name__ == "__main__":
     argument_parser.add_argument('--last', default=1000, type=int, help='Only last n eligible characters')
     argument_parser.add_argument('--group_size', default=5, type=int, help='Number of characters per group')
     argument_parser.add_argument('--group_count', default=20, type=int, help='Number of character groups')
+    argument_parser.add_argument('--repeat', default=1, type=int, help='Repeat each group N times, including TTS, if enabled')
     argument_parser.add_argument('--tts_delay', default=200, type=int, help='Milliseconds to delay text to speech')
+    argument_parser.add_argument('--group_delay', default=200, type=int, help='Milliseconds between groups or lines')
     argument_parser.add_argument('--letters', type=str, help='Only specific letters')
     argument_parser.add_argument('--output', default="morse_audio.mp3", type=str, help='Output file name')
     argument_parser.add_argument('--no_tts', dest="tts", action='store_false', help='Disable TTS')
+    argument_parser.add_argument('--tts_before', dest="tts_before", action='store_true', help='TTS before code')
+    argument_parser.add_argument('--tts_after', dest="tts_after", action='store_true', help='TTS after code')
     argument_parser.add_argument('--words', dest="words", action='store_true', help='Disable TTS')
     argument_parser.add_argument('files', metavar='FILES', nargs='*', help='Files to convert, stdin if none')
-    argument_parser.set_defaults(tts=True, words=False)
+    argument_parser.set_defaults(tts=True, tts_before=False, tts_after=False, words=False)
 
     args = argument_parser.parse_args()
 
@@ -129,6 +145,9 @@ if __name__ == "__main__":
 
     full_audio = AudioSegment.silent(duration=2000)
     switch_to_tts_gap = AudioSegment.silent(duration=args.tts_delay)
+    group_delay = AudioSegment.silent(duration=args.group_delay)
+
+    character_set = None
 
     if args.koch != -1:
         print(f"Koch generation\nLesson {args.koch}")
@@ -185,30 +204,31 @@ if __name__ == "__main__":
         
         lines = text.replace(" ", "_").split("\n")
 
-        if args.group_size == 1:
-            #Special case for single character groups.  Small enough set that we can get a map of each of the samples
+        # if args.group_size == 1:
+        #     #Special case for single character groups.  Small enough set that we can get a map of each of the samples
 
-            samples_for_character = { c : sample_for_character(c, cw_synthesizer, polly_api, switch_to_tts_gap) for c in character_set }
+        #     samples_for_character = { c : sample_for_character(c, cw_synthesizer, polly_api, switch_to_tts_gap) for c in character_set }
 
-            x = 0
+        #     x = 0
 
-            for input_line in lines:
-                input_line = input_line.strip()
+        #     for input_line in lines:
+        #         input_line = input_line.strip()
 
-                if x > 0:
-                    full_audio = full_audio + cw_synthesizer.inter_word_sample[0]
+        #         for rpt in range(1, args.repeat):
+        #             if x > 0:
+        #                 full_audio = full_audio + cw_synthesizer.inter_word_sample[0]
 
-                audio = samples_for_character[input_line]
+        #             audio = samples_for_character[input_line]
 
-                full_audio = full_audio + audio
-                x = x + 1
+        #             full_audio = full_audio + audio
+        #             x = x + 1
 
-        else:
-            full_audio = process_lines(lines, cw_synthesizer, polly_api, full_audio, switch_to_tts_gap)
+        # else:
+        full_audio = process_lines(lines, cw_synthesizer, polly_api, args.tts_before, args.tts_after, full_audio, group_delay, switch_to_tts_gap, args.repeat)
     else:
         lines = [input_line for input_line in fileinput.input(files=args.files if len(args.files) > 0 else ('-', ))]
 
-        full_audio = process_lines(lines, cw_synthesizer, polly_api, full_audio, switch_to_tts_gap)
+        full_audio = process_lines(lines, cw_synthesizer, polly_api, args.tts_before, args.tts_after, full_audio, group_delay, switch_to_tts_gap, args.repeat)
 
     print(f"Exporting {args.output}")
     full_audio.export(args.output, format="mp3")
