@@ -1,7 +1,14 @@
 class CWOpsGenerator:
 	lessons = [
 		["T", "E", "A", "N"],
-		["O", "I", "S", "1", "4"]
+		["O", "I", "S", "1", "4"],
+		["R", "H", "D", "L", "2", "5"],
+		["U", "C"],
+		["M", "W", "3", "6", "?"],
+		["F", "Y"],
+		["P", "G", "7", "9", "/"],
+		["B", "V"],
+		["K", "J", "8", "0", "<BT>"], # Pro Signs: <BT>
 		]
 
 	def generate(self, lesson_number, group_size, group_count):

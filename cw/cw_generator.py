@@ -43,16 +43,39 @@ class CWGenerator:
 
     def generate(s):
         output = ""
+        in_prosign = False
+        prosign = None
 
         s = s.upper()
 
         for char in s:
-            morse_char = CWGenerator.morse_code.get(char)
-            if morse_char is None:
+            if char == "<":
+                in_prosign = True
+                prosign = ""
+                continue
+
+            if in_prosign:
+                if char == ">":
+                    if len(output) > 0:
+                        output += " "
+
+                    for prosign_char in prosign:
+                        morse_char = CWGenerator.morse_char.get(prosign_char)
+                        output += morse_char
+                    in_prosign = False
+                    prosign = None
+                else:
+                    prosign += char
+
                 continue
 
             if len(output) > 0:
                 output += " "
+
+            morse_char = CWGenerator.morse_code.get(char)
+            if morse_char is None:
+                continue
+
             output += morse_char
 
         return output
