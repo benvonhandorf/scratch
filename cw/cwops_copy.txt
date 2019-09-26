@@ -1,0 +1,387 @@
+KN4COI
+<BK><BK><BK><BK><BK>
+0 0 0 0 0
+1 1 1 1 1
+142
+1425
+14253679"
+1432
+1452
+1512
+2 2 2 2 2
+2N2222
+3 3 3 3 3
+3316
+335
+3500Z
+4 4 4 4 4
+4241
+4250
+451
+5 5 5 5 5
+5514"
+6 6 6 6 6
+6122
+6146
+7 7 7 7 7
+73
+7400
+7423
+8 8 8 8 8
+8044
+807
+9 9 9 9 9
+a a a a a
+AA3 U
+AA3B
+ab
+Africa
+AI1E
+al
+AL2A
+all
+ant
+ar
+asia
+at
+ate
+atom
+away
+b b b b b
+BA1CW
+BA1RO
+back
+bad
+barn
+barney
+bed
+best
+better
+bill
+blame
+bland
+blend
+blow
+body
+bolt
+bore
+born
+brad
+bread
+build
+built
+bulb
+BV2AA
+c c c c c
+ca
+call
+cause
+CE1NI
+cell
+chair
+change
+chart
+chas
+chase
+chat
+chin
+chug
+chum
+co
+CO5NO
+coil
+couch
+coy
+ct
+CT1AC
+CU1LL
+cute
+d d d d d
+dallas
+date
+deal
+dell
+dew
+dipole
+DL1AT
+DM5RA
+doll
+e e e e e
+EA1ON
+each
+eat
+ES4IT"
+f f f f f
+F5IN
+F6/N6AM
+face
+fact
+fair
+far
+fare
+fear
+feet
+fl
+foot
+fur
+furry
+g g g g g
+G4AN/3
+gain
+garage
+gas
+geo
+george
+glad
+glare
+guard
+gus
+h h h h h
+hall
+hamburg
+hay
+hear
+help
+her
+hers
+HH5H
+high
+hill
+him
+his
+hold
+hole
+home
+Houston
+HS1TD
+hw?
+i i i i i
+il
+in
+it
+IT4O
+j j j j j
+jack
+jay
+JE1TRV
+jerry
+jim
+john
+k k k k k
+K1JD
+K2UMU
+K4BAI
+K9UCA/9
+KH6LC
+kw
+ky
+l l l l l
+la
+large
+larry
+late
+later
+lax
+lead
+ledge
+line
+load
+London
+m m m m m
+ma
+mall
+mat
+matt
+mb
+me
+mel
+Memphis
+mill
+mow
+much
+n n n n n
+N1AR
+N1AR/5
+N1AS
+N2AT
+N2NW
+N3AM
+N4ON
+N5KO
+N6RB/4
+NA2T
+NA4T
+nail
+name
+nb
+nc
+NC5A
+nd
+ND2T
+ne
+neat
+net
+nit
+nj
+nm
+no
+NO1S
+NO3M
+noise
+not
+note
+nr
+ns
+nt
+NU4R
+nyc
+o o o o o
+ohms
+oil
+ok
+on
+ON4UN
+one
+ouch
+p p p p p
+pa
+page
+paper
+paris
+pave
+peg
+pen
+pencil
+pepper
+pig
+pipe
+pit
+pug
+pwr
+q q q q q
+qc
+qrm
+qrx
+r r r r r
+rack
+rail
+rain
+ray
+reach
+rig
+root
+roy
+rst
+RW5L
+s s s s s
+S41T
+S52R
+sail
+sauce
+save
+say
+sc
+sd
+sdgo
+seal
+sell
+sf
+she
+shed
+sk
+soil
+sole
+solve
+son
+stone
+such
+sun
+switch
+Sydney
+t t t t t
+tach
+tack
+tail
+tall
+tan"
+tat
+tea
+teach
+tease
+tech
+tee
+teen
+teeth
+tell
+ten
+test
+the
+their
+them
+then
+they
+tie
+tin
+toe
+toes
+toil
+Tokyo
+told
+toll
+ton
+tooth
+toss
+touch
+tow
+tower
+toy
+u u u u u
+uk
+ur
+usa
+ut
+v v v v v
+VA3KP
+valve
+vat
+vault
+VE2/K2LE
+VE3NE
+vertical
+view
+VK4OM
+volt
+vote
+vow
+w w w w w
+W2/VE1AR
+W2TT
+W3/PY2AA
+W3AA
+W6AM
+wait
+wall
+was
+wash
+water
+wave
+WB2AE
+well
+were
+wet
+what
+where
+will
+wish
+wl
+wx
+x x x x x
+y y y y y
+yes
+yet
+YO1AR
+yonder
+you
+your
+z z z z z
+ZL2TT

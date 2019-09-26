@@ -9,6 +9,7 @@ class CWOpsGenerator:
 		["P", "G", "7", "9", "/"],
 		["B", "V"],
 		["K", "J", "8", "0", "<BT>"], # Pro Signs: <BT>
+		["X", "Q", "Z", "<BK>"], # Pro Signs: <BK>
 		]
 
 	def generate(self, lesson_number, group_size, group_count):
