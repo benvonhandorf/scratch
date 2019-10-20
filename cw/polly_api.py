@@ -50,7 +50,7 @@ class PollyApi:
         return file_path
 
     def filename_for(self, morse_code_text, is_characters):
-        filename = morse_code_text.strip().replace(" ", "_")
+        filename = morse_code_text.strip().replace(" ", "_").replace("/", "slash")
 
         if is_characters:
             filename = "characters_" + filename

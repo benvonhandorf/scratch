@@ -3,7 +3,7 @@ from pydub.generators import Sine
 
 class CWSynthesizer:
     def __init__(self, char_speed_wpm, inter_character_wpm, inter_word_wpm):
-        self.generator = Sine(700)
+        self.generator = Sine(550)
 
         self.dit_length = int(1200/char_speed_wpm)
         self.dah_length = self.dit_length * 3
