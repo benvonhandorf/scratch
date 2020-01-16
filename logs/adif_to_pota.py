@@ -116,6 +116,8 @@ if __name__ == "__main__":
                 for line in header_lines:
                     output.write(line)
 
+                print(f"Found {len(park_records)} records")
+
                 for record in park_records:
                     for line in record:
                         output.write(line)

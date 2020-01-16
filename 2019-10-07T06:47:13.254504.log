@@ -1,0 +1,273 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+  "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" version="XHTML+RDFa 1.0" dir="ltr">
+
+<head profile="http://www.w3.org/1999/xhtml/vocab">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Generator" content="Drupal 7 (http://drupal.org)" />
+<meta http-equiv="refresh" content="300" />
+<link rel="shortcut icon" href="http://wsprnet.org/drupal/sites/wsprnet.org/files/favicon.png" type="image/png" />
+  <title>Database | WSPRnet</title>
+  <link type="text/css" rel="stylesheet" href="http://wsprnet.org/drupal/sites/wsprnet.org/files/css/css_dRT-6rU1dRftKRQwz-1EJWE6PP3Qm_cmfDslBM1Fs78.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://wsprnet.org/drupal/sites/wsprnet.org/files/css/css_pIuJfEyn0ZF4gpwpFGeZt0xKRlQvHYLbXYW0olAdO18.css" media="all" />
+<link type="text/css" rel="stylesheet" href="http://wsprnet.org/drupal/sites/wsprnet.org/files/css/css_Cp7PtrGACndArI8RduJHUHJmjlhjcapBlZJZcTIVeNk.css" media="all" />
+<style type="text/css" media="all">
+<!--/*--><![CDATA[/*><!--*/
+#page { width: 1; }
+body.sidebar-first #main, body.two-sidebars #main { margin-left: -210px !important; margin-right: 0px;}
+body.sidebar-first #squeeze, body.two-sidebars #squeeze { margin-left: 210px !important; margin-right: 0px; }
+#sidebar-left { width: 210px; }
+body.sidebar-second #main, body.two-sidebars #main { margin-right: -210px !important; margin-left: 0px;}
+body.sidebar-second #squeeze, body.two-sidebars #squeeze { margin-right: 210px !important; margin-left: 0px; }
+#sidebar-right { width: 210px; }
+body { font-family: Arial, Verdana, sans-serif; }
+#suckerfishmenu div .contextual-links-wrapper { display: none; }
+/*]]>*/-->
+</style>
+<link type="text/css" rel="stylesheet" href="http://wsprnet.org/drupal/sites/wsprnet.org/files/css/css_flYwABIkevZ1hiPKRqqntwu3Qjirk9DRDyZAX63RBzM.css" media="print" />
+
+<!--[if IE]>
+<link type="text/css" rel="stylesheet" href="http://wsprnet.org/drupal/sites/all/themes/newsflash/css/ie.css?pxg01a" media="all" />
+<![endif]-->
+  <script type="text/javascript" src="http://wsprnet.org/drupal/misc/jquery.js?v=1.4.4"></script>
+<script type="text/javascript" src="http://wsprnet.org/drupal/misc/jquery-extend-3.4.0.js?v=1.4.4"></script>
+<script type="text/javascript" src="http://wsprnet.org/drupal/misc/jquery.once.js?v=1.2"></script>
+<script type="text/javascript" src="http://wsprnet.org/drupal/misc/drupal.js?pxg01a"></script>
+<script type="text/javascript">
+<!--//--><![CDATA[//><!--
+jQuery.extend(Drupal.settings, {"basePath":"\/drupal\/","pathPrefix":"","ajaxPageState":{"theme":"newsflash","theme_token":"8kZt0D6rKAlS6EQnk1B1S6uavSWFsdnCNC61FNRJ5Wk","js":{"misc\/jquery.js":1,"misc\/jquery-extend-3.4.0.js":1,"misc\/jquery.once.js":1,"misc\/drupal.js":1},"css":{"modules\/system\/system.base.css":1,"modules\/system\/system.menus.css":1,"modules\/system\/system.messages.css":1,"modules\/system\/system.theme.css":1,"modules\/comment\/comment.css":1,"modules\/field\/theme\/field.css":1,"modules\/node\/node.css":1,"modules\/poll\/poll.css":1,"modules\/search\/search.css":1,"modules\/user\/user.css":1,"modules\/forum\/forum.css":1,"sites\/all\/modules\/views\/css\/views.css":1,"sites\/all\/modules\/ctools\/css\/ctools.css":1,"sites\/all\/themes\/newsflash\/style.css":1,"sites\/all\/themes\/newsflash\/css\/blue.css":1,"sites\/all\/themes\/newsflash\/css\/suckerfish_blue.css":1,"0":1,"sites\/all\/themes\/newsflash\/print.css":1,"sites\/all\/themes\/newsflash\/css\/ie.css":1}},"urlIsAjaxTrusted":{"\/drupal\/wsprnet\/spots?destination=wsprnet\/spots":true}});
+//--><!]]>
+</script>
+<!--[if lte IE 6]>
+        <script type="text/javascript" src="sites/all/themes/newsflash/js/suckerfish.js"></script>
+      <![endif]--></head>
+<body class="html not-front not-logged-in one-sidebar sidebar-first page-wsprnet page-wsprnet-spots" >
+  <div id="skip-link">
+    <a href="#main-content" class="element-invisible element-focusable">Skip to main content</a>
+  </div>
+    <!-- page -->
+<div id="page">
+  <!-- header -->
+  <div id="header" class="clearfix">
+            <div id="logo-title">
+      <!-- logo -->
+        <a href="/drupal/" title="Home"> <img src="http://wsprnet.org/drupal/sites/wsprnet.org/files/WSPRnet_0.png" alt="Home" id="logo" /> </a>
+      <!-- /logo -->
+      </div>
+            <div id="name-and-slogan"><!-- name and sloagan -->
+                <!-- site-name -->
+          <h1 class='site-name'> <a href="/drupal/" title="Home"> WSPRnet </a> </h1>
+        <!-- /site-name -->
+                          <!-- slogan -->
+          <div class='site-slogan'>
+          Welcome to the Weak Signal Propagation Reporter Network          </div>
+          <!-- /slogan -->
+              <!-- /name and sloagan -->
+      </div>
+                          <!-- navigation main/secondary menu -->
+        <div id="primary-secondary-menu">
+                      <div id="primarymenu">
+            <!-- main menu -->
+                <ul class="links primary-links"><li class="menu-242 first"><a href="/drupal/wsprnet/activity" title="List of stations currently active by band">Activity</a></li>
+<li class="menu-204"><a href="/drupal/wsprnet/map" title="Map of recently heard WSPR spots">Map</a></li>
+<li class="menu-273 active-trail active"><a href="/drupal/wsprnet/spots" title="WSPR spot database" class="active-trail active">Database</a></li>
+<li class="menu-297"><a href="/drupal/wsprnet/stats" title="Spot Database Statistics">Stats</a></li>
+<li class="menu-206"><a href="/drupal/forum" title="Form for discussion of WSPR activities">Forum</a></li>
+<li class="menu-208 last"><a href="http://wsprnet.org/drupal/downloads" title="Information about downloads of WSPR software and data.">Downloads</a></li>
+</ul>            <!-- /main menu -->
+            </div>
+                            </div>
+        <!-- /navigation main/secondary menu -->
+              </div>
+  <!-- /header -->
+      <!-- middle-container -->
+  <div id="middlecontainer">
+        <!-- sidebar-left -->
+      <div id="sidebar-left">
+        <div class="region region-sidebar-first">
+    <div id="block-user-login" class="block block-user">
+
+    <h2 class="title">User login</h2>
+  
+  <div class="content">
+    <form action="/drupal/wsprnet/spots?destination=wsprnet/spots" method="post" id="user-login-form" accept-charset="UTF-8"><div><div class="form-item form-type-textfield form-item-name">
+  <label for="edit-name">Username <span class="form-required" title="This field is required.">*</span></label>
+ <input type="text" id="edit-name" name="name" value="" size="15" maxlength="60" class="form-text required" />
+</div>
+<div class="form-item form-type-password form-item-pass">
+  <label for="edit-pass">Password <span class="form-required" title="This field is required.">*</span></label>
+ <input type="password" id="edit-pass" name="pass" size="15" maxlength="128" class="form-text required" />
+</div>
+<div class="item-list"><ul><li class="first"><a href="/drupal/user/register" title="Create a new user account.">Create new account</a></li>
+<li class="last"><a href="/drupal/user/password" title="Request new password via e-mail.">Request new password</a></li>
+</ul></div><input type="hidden" name="form_build_id" value="form-h4-W-mSi7DTq0Oy0gBYubfTqGf58OExpfW5hiIDCVcQ" />
+<input type="hidden" name="form_id" value="user_login_block" />
+<div class="form-actions form-wrapper" id="edit-actions"><input type="submit" id="edit-submit" name="op" value="Log in" class="form-submit" /></div></div></form>  </div>
+</div>
+<div id="block-block-2" class="block block-block">
+
+    <h2 class="title">Frequencies</h2>
+  
+  <div class="content">
+    <p>USB dial (MHz): 0.136, 0.4742, 1.8366, 3.5686, 5.2872, 7.0386, 10.1387, 14.0956, 18.1046, 21.0946, 24.9246, 28.1246, 50.293, 70.091, 144.489, 432.300, 1296.500</p>
+  </div>
+</div>
+<div id="block-wsprnet-wsprnet-spots" class="block block-wsprnet">
+
+    <h2 class="title">Spot Count</h2>
+  
+  <div class="content">
+    1,631,626,901 total spots<br>1,320,063 in the last 24 hours<br>56,721 in the last hour  </div>
+</div>
+<div id="block-system-navigation" class="block block-system block-menu">
+
+    <h2 class="title">Navigation</h2>
+  
+  <div class="content">
+    <ul class="menu"><li class="first last collapsed"><a href="/drupal/forum">Forums</a></li>
+</ul>  </div>
+</div>
+<div id="block-block-9" class="block block-block">
+
+    <h2 class="title">3rd Party Maps and Data</h2>
+  
+  <div class="content">
+    <p><a href="http://wspr.aprsinfo.com/">M0XDK Map</a><br /><a href="http://mardie4.100webspace.net/index.html">KB9AMG Monthly Stats</a></p>
+  </div>
+</div>
+<div id="block-user-online" class="block block-user">
+
+    <h2 class="title">Who's online</h2>
+  
+  <div class="content">
+    <p>There are currently 47 users online.</p><div class="item-list"><ul><li class="first"><span class="username">W2XC</span></li>
+<li><span class="username">VK2DVM</span></li>
+<li><span class="username">DF4PV</span></li>
+<li><span class="username">VK7JJ</span></li>
+<li><span class="username">ka1qma</span></li>
+<li><span class="username">OH5YR</span></li>
+<li><span class="username">SV1CIF</span></li>
+<li><span class="username">W0yse</span></li>
+<li><span class="username">KC9LIF</span></li>
+<li><span class="username">G0LUJ</span></li>
+<li><span class="username">WB3DPL</span></li>
+<li><span class="username">VK4AQJ</span></li>
+<li><span class="username">ja9mat</span></li>
+<li><span class="username">VK2IJM</span></li>
+<li><span class="username">SM7PNV</span></li>
+<li><span class="username">JE6JFL</span></li>
+<li><span class="username">2E0ILY</span></li>
+<li><span class="username">JI1BQW</span></li>
+<li><span class="username">DF4WV</span></li>
+<li><span class="username">WA2USJ</span></li>
+<li><span class="username">G3ZIL</span></li>
+<li><span class="username">pd0pha</span></li>
+<li><span class="username">VK5GF</span></li>
+<li><span class="username">DK8FT</span></li>
+<li><span class="username">G4ZAL</span></li>
+<li><span class="username">KK4MBI</span></li>
+<li><span class="username">AC0G</span></li>
+<li><span class="username">VK5AYD</span></li>
+<li><span class="username">G4ZFQ</span></li>
+<li><span class="username">F5VLB</span></li>
+<li><span class="username">JH1OFX</span></li>
+<li><span class="username">wb7abp</span></li>
+<li><span class="username">VK2KRR</span></li>
+<li><span class="username">LA3JJ</span></li>
+<li><span class="username">wa9wtk</span></li>
+<li><span class="username">VE7GEL</span></li>
+<li><span class="username">G4PCI</span></li>
+<li><span class="username">VK6HP</span></li>
+<li><span class="username">WA7NE</span></li>
+<li><span class="username">VK2QV</span></li>
+<li><span class="username">VK3FSPD</span></li>
+<li><span class="username">VK6TGQ</span></li>
+<li><span class="username">DL6NL</span></li>
+<li><span class="username">vk2kcm</span></li>
+<li><span class="username">VK3AIG</span></li>
+<li><span class="username">F1LFT</span></li>
+<li class="last"><span class="username">K7CKW</span></li>
+</ul></div>  </div>
+</div>
+  </div>
+      </div>
+    <!-- /sidebar-left -->
+        <!-- main -->
+    <div id="main">
+      <!-- sequeeze -->
+      <div id="squeeze">
+                        <!-- sequeeze-content -->
+        <div id="squeeze-content">
+          <!-- inner-content -->
+          <div id="inner-content">
+                                    <!-- messages -->
+                        <!-- /messages -->
+                        <!-- title -->
+              <div id="branding" class="clearfix">
+                                <h1  class="title">Database</h1>
+                              </div>
+            <!-- /title -->
+                                    <!-- tabs -->
+              <div class="tabs">
+                              </div>
+            <!-- /tabs -->
+                                                <!-- content -->
+              <div class="region region-content">
+    <div id="block-system-main" class="block block-system">
+
+    
+  <div class="content">
+    <p><a href="/drupal/wsprnet/spotquery">Specify query parameters</a></p>
+<p>15 spots:</p>
+<table><tr><th>Timestamp</th><th>Call</th><th>MHz</th><th>SNR</th><th>Drift</th><th>Grid</th><th>Pwr</th><th>Reporter</th><th>RGrid</th><th>km</th><th>az</th></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040017&nbsp;</td><td align='right'>&nbsp;-12&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;W5WTH&nbsp;</td><td align='left'>&nbsp;EM10bj&nbsp;</td><td align='right'>&nbsp;1554&nbsp;</td><td align='right'>&nbsp;236&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040016&nbsp;</td><td align='right'>&nbsp;-28&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;VK1AAH&nbsp;</td><td align='left'>&nbsp;QF44mp&nbsp;</td><td align='right'>&nbsp;15327&nbsp;</td><td align='right'>&nbsp;258&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040016&nbsp;</td><td align='right'>&nbsp;-21&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;VK2TPM&nbsp;</td><td align='left'>&nbsp;QF56of&nbsp;</td><td align='right'>&nbsp;15076&nbsp;</td><td align='right'>&nbsp;259&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040040&nbsp;</td><td align='right'>&nbsp;-10&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;N6WXD&nbsp;</td><td align='left'>&nbsp;DM12lx&nbsp;</td><td align='right'>&nbsp;2990&nbsp;</td><td align='right'>&nbsp;267&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040022&nbsp;</td><td align='right'>&nbsp;+1&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;VE6JY&nbsp;</td><td align='left'>&nbsp;DO33or&nbsp;</td><td align='right'>&nbsp;2690&nbsp;</td><td align='right'>&nbsp;317&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040016&nbsp;</td><td align='right'>&nbsp;+7&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;W6FU&nbsp;</td><td align='left'>&nbsp;EM00ve&nbsp;</td><td align='right'>&nbsp;1593&nbsp;</td><td align='right'>&nbsp;236&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040016&nbsp;</td><td align='right'>&nbsp;-3&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;VE6JY&nbsp;</td><td align='left'>&nbsp;DO33or&nbsp;</td><td align='right'>&nbsp;2690&nbsp;</td><td align='right'>&nbsp;317&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040014&nbsp;</td><td align='right'>&nbsp;-7&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;KB6C/6&nbsp;</td><td align='left'>&nbsp;DM04kr&nbsp;</td><td align='right'>&nbsp;3101&nbsp;</td><td align='right'>&nbsp;272&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040020&nbsp;</td><td align='right'>&nbsp;-6&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;WB5B&nbsp;</td><td align='left'>&nbsp;EL16de&nbsp;</td><td align='right'>&nbsp;1887&nbsp;</td><td align='right'>&nbsp;225&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040018&nbsp;</td><td align='right'>&nbsp;-26&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;VK5MR&nbsp;</td><td align='left'>&nbsp;PF94gw&nbsp;</td><td align='right'>&nbsp;16209&nbsp;</td><td align='right'>&nbsp;263&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040017&nbsp;</td><td align='right'>&nbsp;-24&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;N5XKG&nbsp;</td><td align='left'>&nbsp;DM65pg&nbsp;</td><td align='right'>&nbsp;2010&nbsp;</td><td align='right'>&nbsp;265&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040036&nbsp;</td><td align='right'>&nbsp;-20&nbsp;</td><td align='right'>&nbsp;1&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;K4RCG&nbsp;</td><td align='left'>&nbsp;FM08si&nbsp;</td><td align='right'>&nbsp;526&nbsp;</td><td align='right'>&nbsp;96&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040014&nbsp;</td><td align='right'>&nbsp;-7&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;W6LVP&nbsp;</td><td align='left'>&nbsp;DM04li&nbsp;</td><td align='right'>&nbsp;3108&nbsp;</td><td align='right'>&nbsp;271&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040015&nbsp;</td><td align='right'>&nbsp;-22&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;K9AN&nbsp;</td><td align='left'>&nbsp;EN50wc&nbsp;</td><td align='right'>&nbsp;337&nbsp;</td><td align='right'>&nbsp;292&nbsp;</td></tr>
+<tr><td align='right'>&nbsp;2019-10-07 10:44&nbsp;</td><td align='left'>&nbsp;KN4COI&nbsp;</td><td align='right'>&nbsp;7.040015&nbsp;</td><td align='right'>&nbsp;-23&nbsp;</td><td align='right'>&nbsp;0&nbsp;</td><td align='left'>&nbsp;EM79sa&nbsp;</td><td align='right'>&nbsp;5&nbsp;</td><td align='left'>&nbsp;KP4MD&nbsp;</td><td align='left'>&nbsp;CM98iq&nbsp;</td><td align='right'>&nbsp;3168&nbsp;</td><td align='right'>&nbsp;281&nbsp;</td></tr>
+</table>
+<p><em>Query time: 0.064 sec</em></p>
+<br><a href="http://wsprnet.org/olddb">Link to old database interface</a>  </div>
+</div>
+  </div>
+            <!-- /content -->
+                                  </div>
+          <!-- /inner-content -->
+        </div>
+        <!-- /squeeze-content -->
+      </div>
+      <!-- /squeeze -->
+    </div>
+    <!-- /main -->
+      </div>
+  <!-- /middle-container -->
+  <div style="clear:both"></div>
+          <div id="footer">
+              <div id="footer-region">
+            <div class="region region-footer">
+    <div id="block-block-7" class="block block-block">
+
+    
+  <div class="content">
+    For issues with this site, email the <a href="mailto:wsprnet@wsprnet.org">WSPRNET Admin Team</a> or post to the site forum. Downloads and more information about WSPR program and the MEPT_JT mode, as well as other modes by Joe Taylor (K1JT), can be found at the <a href='http://physics.princeton.edu/pulsar/K1JT/'>WSJT Home Page</a>.  </div>
+</div>
+  </div>
+        </div><!-- /footer -->
+                          <div class="rooplelogo">
+                      <a href="http://www.roopletheme.com" title="RoopleTheme!" target="_blank"><img src="/drupal/sites/all/themes/newsflash/RoopleThemeLogo.png" alt="RoopleTheme!"/></a>
+                  </div><!-- /rooplelogo -->
+          </div>
+  </div>
+<!-- /page NF VER 2.5-->
+  </body>
+</html>

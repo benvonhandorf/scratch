@@ -51,7 +51,7 @@ def populate_card(dwg, card, peak, loc_id, static_maps, geocoding_api):
 
     rect = card.add(dwg.rect(size=card_size))
     rect.fill("none")
-    rect.stroke("black")
+    rect.stroke("none")
 
     activationMarker = "*" if peak.activationCount is None else activationCount
 

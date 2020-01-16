@@ -59,7 +59,7 @@ if __name__ == "__main__":
                   'sortrev' : '1',
                   'excludespecial' : '1',
                   'op' : 'Update',
-                  'form_build_id': 'form-eFzYLp8WcZSvZitd_dXfpmjb-atUHieH7kid8v066Sk',
+                  'form_build_id': 'form-qVr_oSdFsHMRjYQJm5Pv1rQFmgPMbiSlWsxpCwJ8qFM',
                   'form_id' : 'wsprnet_spotquery_form'}
 
         response = requests.post('http://wsprnet.org/drupal/wsprnet/spotquery', data=formData)

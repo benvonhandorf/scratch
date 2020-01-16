@@ -1,0 +1,113 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:RJ45_Shielded J?
+U 1 1 5DD251FC
+P 2900 2900
+F 0 "J?" H 2957 3567 50  0000 C CNN
+F 1 "Mic Cable" H 2957 3476 50  0000 C CNN
+F 2 "" V 2900 2925 50  0001 C CNN
+F 3 "~" V 2900 2925 50  0001 C CNN
+	1    2900 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L BVH_Connectors_Misc:AudioJack4_SwitchTR J?
+U 1 1 5DD25F57
+P 2900 1500
+F 0 "J?" H 2832 1925 50  0000 C CNN
+F 1 "Audio In" H 2832 1834 50  0000 C CNN
+F 2 "" H 2850 1500 50  0001 C CNN
+F 3 "~" H 2850 1500 50  0001 C CNN
+	1    2900 1500
+	1    0    0    -1  
+$EndComp
+Text HLabel 3300 3000 2    50   Input ~ 0
+PTT
+Text HLabel 3300 3100 2    50   Input ~ 0
+RDO_GND
+Text HLabel 3300 2900 2    50   Input ~ 0
+RDO_MIC
+Text HLabel 3300 2500 2    50   Input ~ 0
+DOWN
+Text HLabel 3300 2600 2    50   Input ~ 0
+UP
+$Comp
+L power:+5V #PWR?
+U 1 1 5DD2747A
+P 3650 2700
+F 0 "#PWR?" H 3650 2550 50  0001 C CNN
+F 1 "+5V" H 3665 2873 50  0000 C CNN
+F 2 "" H 3650 2700 50  0001 C CNN
+F 3 "" H 3650 2700 50  0001 C CNN
+	1    3650 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3650 2700 3300 2700
+Text HLabel 3300 2800 2    50   Input ~ 0
+RDO_MICGND
+Text HLabel 3300 3200 2    50   Input ~ 0
+FAST
+Text Notes 2400 3700 0    50   ~ 0
+Flipped RJ-45 pin numbers \nare dealt with in a modified \nfootprint - Thx Yaesu
+Text HLabel 3100 1700 2    50   Input ~ 0
+RDO_LEFT
+Text HLabel 3100 1500 2    50   Input ~ 0
+RDO_RIGHT
+Text HLabel 3100 1300 2    50   Input ~ 0
+RDO_AUDIO_GND
+NoConn ~ 3100 1400
+NoConn ~ 3100 1600
+$Comp
+L BVH_Connectors_Misc:AudioJack4_SwitchTR J?
+U 1 1 5DD2D305
+P 10000 3250
+F 0 "J?" H 9620 3133 50  0000 R CNN
+F 1 "Cell Headset" H 10350 2800 50  0000 R CNN
+F 2 "" H 9950 3250 50  0001 C CNN
+F 3 "~" H 9950 3250 50  0001 C CNN
+	1    10000 3250
+	-1   0    0    1   
+$EndComp
+Text HLabel 9800 3050 0    50   Input ~ 0
+CELL_LEFT
+Text HLabel 9800 3250 0    50   Input ~ 0
+CELL_RIGHT
+Text HLabel 9800 3450 0    50   Input ~ 0
+CELL_MIC
+Text HLabel 9800 3350 0    50   Input ~ 0
+CELL_GND
+Text Notes 9750 3650 0    50   ~ 0
+CTIA Standard
+$Comp
+L Connector:Conn_01x03_Female J?
+U 1 1 5DD32667
+P 10100 1400
+F 0 "J?" H 10128 1426 50  0000 L CNN
+F 1 "Headset Audio" H 9650 1650 50  0000 L CNN
+F 2 "" H 10100 1400 50  0001 C CNN
+F 3 "~" H 10100 1400 50  0001 C CNN
+	1    10100 1400
+	1    0    0    -1  
+$EndComp
+Text HLabel 9900 1300 0    50   Input ~ 0
+HST_LEFT
+Text HLabel 9900 1400 0    50   Input ~ 0
+HST_RIGHT
+Text HLabel 9900 1500 0    50   Input ~ 0
+HST_GND
+$EndSCHEMATC
