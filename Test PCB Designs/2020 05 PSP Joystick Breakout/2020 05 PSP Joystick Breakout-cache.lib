@@ -1,11 +1,11 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
-# BVH_Sensors_PSP_Joystick
+# 2020-05-PSP-Joystick-Breakout-rescue_PSP_Joystick-BVH_Sensors
 #
-DEF BVH_Sensors_PSP_Joystick JOY 0 40 Y Y 1 F N
+DEF 2020-05-PSP-Joystick-Breakout-rescue_PSP_Joystick-BVH_Sensors JOY 0 40 Y Y 1 F N
 F0 "JOY" 300 -450 50 H V C CNN
-F1 "BVH_Sensors_PSP_Joystick" 350 150 50 H V C CNN
+F1 "2020-05-PSP-Joystick-Breakout-rescue_PSP_Joystick-BVH_Sensors" 350 150 50 H V C CNN
 F2 "" 0 0 50 H I C CNN
 F3 "" 0 0 50 H I C CNN
 DRAW

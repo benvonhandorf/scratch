@@ -1,0 +1,86 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Connector:Conn_01x12_Female J1
+U 1 1 5ED0416E
+P 4250 2600
+F 0 "J1" H 4142 1775 50  0000 C CNN
+F 1 "Conn_01x12_Female" H 4142 1866 50  0000 C CNN
+F 2 "BVH_Connectors:Omron_XF3M_12_6_Pin_Combo" H 4250 2600 50  0001 C CNN
+F 3 "~" H 4250 2600 50  0001 C CNN
+	1    4250 2600
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector:Conn_01x12_Female J2
+U 1 1 5ED05D25
+P 5250 3500
+F 0 "J2" V 5323 3430 50  0000 C CNN
+F 1 "Conn_01x12_Female" V 5414 3430 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x12_P2.54mm_Vertical" H 5250 3500 50  0001 C CNN
+F 3 "~" H 5250 3500 50  0001 C CNN
+	1    5250 3500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4650 3300 4650 2000
+Wire Wire Line
+	4650 2000 4450 2000
+Wire Wire Line
+	4450 2100 4750 2100
+Wire Wire Line
+	4750 2100 4750 3300
+Wire Wire Line
+	4450 2200 4850 2200
+Wire Wire Line
+	4850 2200 4850 3300
+Wire Wire Line
+	4450 2300 4950 2300
+Wire Wire Line
+	4950 2300 4950 3300
+Wire Wire Line
+	4450 2400 5050 2400
+Wire Wire Line
+	5050 2400 5050 3300
+Wire Wire Line
+	4450 2500 5150 2500
+Wire Wire Line
+	5150 2500 5150 3300
+Wire Wire Line
+	4450 2600 5250 2600
+Wire Wire Line
+	5250 2600 5250 3300
+Wire Wire Line
+	4450 2700 5350 2700
+Wire Wire Line
+	5350 2700 5350 3300
+Wire Wire Line
+	4450 2800 5450 2800
+Wire Wire Line
+	5450 2800 5450 3300
+Wire Wire Line
+	4450 2900 5550 2900
+Wire Wire Line
+	5550 2900 5550 3300
+Wire Wire Line
+	4450 3000 5650 3000
+Wire Wire Line
+	5650 3000 5650 3300
+Wire Wire Line
+	4450 3100 5750 3100
+Wire Wire Line
+	5750 3100 5750 3300
+$EndSCHEMATC

@@ -137,7 +137,7 @@ SW1
 Text GLabel 4800 3800 0    50   Input ~ 0
 SW2
 $Comp
-L BVH_Sensors:PSP_Joystick JOY1
+L 2020-05-PSP-Joystick-Breakout-rescue:PSP_Joystick-BVH_Sensors JOY1
 U 1 1 5EBEFAD9
 P 4900 2450
 F 0 "JOY1" H 5428 2346 50  0000 L CNN
