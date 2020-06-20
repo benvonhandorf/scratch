@@ -1,0 +1,207 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L pspice:VSOURCE V1
+U 1 1 5EEA0C16
+P 2050 4650
+F 0 "V1" H 2278 4696 50  0000 L CNN
+F 1 "VSOURCE" H 2278 4605 50  0000 L CNN
+F 2 "" H 2050 4650 50  0001 C CNN
+F 3 "~" H 2050 4650 50  0001 C CNN
+F 4 "V" H 2050 4650 50  0001 C CNN "Spice_Primitive"
+F 5 "dc 5" H 2050 4650 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 2050 4650 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    2050 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR01
+U 1 1 5EEA0EBA
+P 2050 5100
+F 0 "#PWR01" H 2050 4850 50  0001 C CNN
+F 1 "GND" H 2055 4927 50  0000 C CNN
+F 2 "" H 2050 5100 50  0001 C CNN
+F 3 "" H 2050 5100 50  0001 C CNN
+	1    2050 5100
+	1    0    0    -1  
+$EndComp
+Text Label 5400 3000 0    50   ~ 0
+OUT
+Wire Wire Line
+	2050 4950 2050 5100
+$Comp
+L Amplifier_Operational:OPA1678 U1
+U 1 1 5EEA2E8B
+P 4100 3000
+F 0 "U1" H 4100 3367 50  0000 C CNN
+F 1 "OPA1678" H 4100 3276 50  0000 C CNN
+F 2 "" H 4100 3000 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa1678.pdf" H 4100 3000 50  0001 C CNN
+F 4 "X" H 4100 3000 50  0001 C CNN "Spice_Primitive"
+F 5 "OPA1678" H 4100 3000 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 4100 3000 50  0001 C CNN "Spice_Netlist_Enabled"
+F 7 "/home/benvh/projects/kicad-library/Simulation/OPA1678/OPA1678.lib" H 4100 3000 50  0001 C CNN "Spice_Lib_File"
+	1    4100 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Amplifier_Operational:OPA1678 U1
+U 3 1 5EEA6430
+P 1300 4650
+F 0 "U1" H 1258 4696 50  0000 L CNN
+F 1 "OPA1678" H 1258 4605 50  0000 L CNN
+F 2 "" H 1300 4650 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/opa1678.pdf" H 1300 4650 50  0001 C CNN
+	3    1300 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 4350 2050 4350
+Wire Wire Line
+	1200 4950 2050 4950
+Connection ~ 2050 4950
+$Comp
+L pspice:VSOURCE V2
+U 1 1 5EEAABC8
+P 2800 3450
+F 0 "V2" H 3028 3496 50  0000 L CNN
+F 1 "VSOURCE" H 3028 3405 50  0000 L CNN
+F 2 "" H 2800 3450 50  0001 C CNN
+F 3 "~" H 2800 3450 50  0001 C CNN
+F 4 "V" H 2800 3450 50  0001 C CNN "Spice_Primitive"
+F 5 "ac 1" H 2800 3450 50  0001 C CNN "Spice_Model"
+F 6 "Y" H 2800 3450 50  0001 C CNN "Spice_Netlist_Enabled"
+	1    2800 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDA #PWR04
+U 1 1 5EEAEB6D
+P 3200 4700
+F 0 "#PWR04" H 3200 4450 50  0001 C CNN
+F 1 "GNDA" H 3205 4527 50  0000 C CNN
+F 2 "" H 3200 4700 50  0001 C CNN
+F 3 "" H 3200 4700 50  0001 C CNN
+	1    3200 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R3
+U 1 1 5EEAF686
+P 2700 4300
+F 0 "R3" V 2493 4300 50  0000 C CNN
+F 1 "100k" V 2584 4300 50  0000 C CNN
+F 2 "" V 2630 4300 50  0001 C CNN
+F 3 "~" H 2700 4300 50  0001 C CNN
+	1    2700 4300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5EEAFAD5
+P 2700 4950
+F 0 "R4" V 2493 4950 50  0000 C CNN
+F 1 "100k" V 2584 4950 50  0000 C CNN
+F 2 "" V 2630 4950 50  0001 C CNN
+F 3 "~" H 2700 4950 50  0001 C CNN
+	1    2700 4950
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2550 4950 2050 4950
+Wire Wire Line
+	2850 4950 3200 4950
+Wire Wire Line
+	3200 4950 3200 4700
+Wire Wire Line
+	3200 4700 2850 4700
+Wire Wire Line
+	2850 4700 2850 4300
+Connection ~ 3200 4700
+Wire Wire Line
+	2550 4300 2050 4300
+Wire Wire Line
+	2050 4300 2050 4350
+Connection ~ 2050 4350
+$Comp
+L power:GNDA #PWR03
+U 1 1 5EEB0FE9
+P 2800 3750
+F 0 "#PWR03" H 2800 3500 50  0001 C CNN
+F 1 "GNDA" H 2805 3577 50  0000 C CNN
+F 2 "" H 2800 3750 50  0001 C CNN
+F 3 "" H 2800 3750 50  0001 C CNN
+	1    2800 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5EEB72C3
+P 3250 3100
+F 0 "R1" V 3043 3100 50  0000 C CNN
+F 1 "100k" V 3134 3100 50  0000 C CNN
+F 2 "" V 3180 3100 50  0001 C CNN
+F 3 "~" H 3250 3100 50  0001 C CNN
+	1    3250 3100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5EEB77B3
+P 4150 3600
+F 0 "R2" V 3943 3600 50  0000 C CNN
+F 1 "100k" V 4034 3600 50  0000 C CNN
+F 2 "" V 4080 3600 50  0001 C CNN
+F 3 "~" H 4150 3600 50  0001 C CNN
+	1    4150 3600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3400 3100 3650 3100
+Wire Wire Line
+	2800 3150 3100 3150
+Wire Wire Line
+	3100 3150 3100 3100
+Wire Wire Line
+	4000 3600 3650 3600
+Wire Wire Line
+	3650 3600 3650 3100
+Connection ~ 3650 3100
+Wire Wire Line
+	3650 3100 3800 3100
+Wire Wire Line
+	4300 3600 4400 3600
+Wire Wire Line
+	4400 3600 4400 3000
+Wire Wire Line
+	4400 3000 5400 3000
+Connection ~ 4400 3000
+$Comp
+L power:GNDA #PWR02
+U 1 1 5EEB9F49
+P 3400 2550
+F 0 "#PWR02" H 3400 2300 50  0001 C CNN
+F 1 "GNDA" H 3405 2377 50  0000 C CNN
+F 2 "" H 3400 2550 50  0001 C CNN
+F 3 "" H 3400 2550 50  0001 C CNN
+	1    3400 2550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 2550 3800 2550
+Wire Wire Line
+	3800 2550 3800 2900
+$EndSCHEMATC
