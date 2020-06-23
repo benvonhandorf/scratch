@@ -1,0 +1,226 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L BVH_Sensors:PAW3204 U?
+U 1 1 5EF131FB
+P 5850 3600
+F 0 "U?" H 5800 3975 50  0000 C CNN
+F 1 "PAW3204" H 5800 3884 50  0000 C CNN
+F 2 "" H 5850 3600 50  0001 C CNN
+F 3 "" H 5850 3600 50  0001 C CNN
+	1    5850 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5EF13D4D
+P 7700 3700
+F 0 "R?" H 7770 3746 50  0000 L CNN
+F 1 "R" H 7770 3655 50  0000 L CNN
+F 2 "" V 7630 3700 50  0001 C CNN
+F 3 "~" H 7700 3700 50  0001 C CNN
+	1    7700 3700
+	1    0    0    -1  
+$EndComp
+Text GLabel 7700 3950 2    50   Input ~ 0
+LED_A
+Text GLabel 6450 3950 2    50   Input ~ 0
+LED_A
+Wire Wire Line
+	7700 3850 7700 3950
+Text GLabel 6450 3750 2    50   Input ~ 0
+VDDA
+Text GLabel 6450 3650 2    50   Input ~ 0
+VDD
+$Comp
+L power:GND #PWR?
+U 1 1 5EF1462C
+P 6800 3550
+F 0 "#PWR?" H 6800 3300 50  0001 C CNN
+F 1 "GND" H 6805 3377 50  0000 C CNN
+F 2 "" H 6800 3550 50  0001 C CNN
+F 3 "" H 6800 3550 50  0001 C CNN
+	1    6800 3550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6800 3550 6450 3550
+$Comp
+L BVH_Voltage_Regulators:C C?
+U 1 1 5EF1ACFA
+P 7500 4550
+F 0 "C?" H 7615 4596 50  0000 L CNN
+F 1 "1uF" H 7615 4505 50  0000 L CNN
+F 2 "" H 7538 4400 50  0001 C CNN
+F 3 "" H 7500 4550 50  0001 C CNN
+	1    7500 4550
+	1    0    0    -1  
+$EndComp
+Text GLabel 7500 4400 0    50   Input ~ 0
+VDDA
+$Comp
+L power:GND #PWR?
+U 1 1 5EF1AF9E
+P 7500 4700
+F 0 "#PWR?" H 7500 4450 50  0001 C CNN
+F 1 "GND" H 7505 4527 50  0000 C CNN
+F 2 "" H 7500 4700 50  0001 C CNN
+F 3 "" H 7500 4700 50  0001 C CNN
+	1    7500 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L BVH_Voltage_Regulators:C C?
+U 1 1 5EF1C348
+P 4000 4650
+F 0 "C?" H 4115 4696 50  0000 L CNN
+F 1 "10uF" H 4115 4605 50  0000 L CNN
+F 2 "" H 4038 4500 50  0001 C CNN
+F 3 "" H 4000 4650 50  0001 C CNN
+	1    4000 4650
+	1    0    0    -1  
+$EndComp
+Text GLabel 4000 4300 0    50   Input ~ 0
+VDD
+Wire Wire Line
+	4000 4500 4000 4300
+$Comp
+L power:GND #PWR?
+U 1 1 5EF1CB20
+P 4000 4900
+F 0 "#PWR?" H 4000 4650 50  0001 C CNN
+F 1 "GND" H 4005 4727 50  0000 C CNN
+F 2 "" H 4000 4900 50  0001 C CNN
+F 3 "" H 4000 4900 50  0001 C CNN
+	1    4000 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4000 4900 4000 4800
+$Comp
+L BVH_Voltage_Regulators:C C?
+U 1 1 5EF1DF8F
+P 4500 4650
+F 0 "C?" H 4615 4696 50  0000 L CNN
+F 1 "0.1uF" H 4615 4605 50  0000 L CNN
+F 2 "" H 4538 4500 50  0001 C CNN
+F 3 "" H 4500 4650 50  0001 C CNN
+	1    4500 4650
+	1    0    0    -1  
+$EndComp
+Text GLabel 4500 4300 0    50   Input ~ 0
+VDD
+Wire Wire Line
+	4500 4500 4500 4300
+$Comp
+L power:GND #PWR?
+U 1 1 5EF1DF9B
+P 4500 4900
+F 0 "#PWR?" H 4500 4650 50  0001 C CNN
+F 1 "GND" H 4505 4727 50  0000 C CNN
+F 2 "" H 4500 4900 50  0001 C CNN
+F 3 "" H 4500 4900 50  0001 C CNN
+	1    4500 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 4900 4500 4800
+$Comp
+L Connector_Generic:Conn_01x06 J?
+U 1 1 5EF1F473
+P 9250 2950
+F 0 "J?" H 9330 2942 50  0000 L CNN
+F 1 "Conn_01x06" H 9330 2851 50  0000 L CNN
+F 2 "Connectors_JST:JST_PH_B6B-PH-K_06x2.00mm_Straight" H 9250 2950 50  0001 C CNN
+F 3 "~" H 9250 2950 50  0001 C CNN
+	1    9250 2950
+	1    0    0    -1  
+$EndComp
+Text GLabel 6450 4050 2    50   Input ~ 0
+LED_C
+Text GLabel 6450 3450 2    50   Input ~ 0
+LED_C
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EF20E8F
+P 7700 3550
+F 0 "#PWR?" H 7700 3400 50  0001 C CNN
+F 1 "+3.3V" H 7715 3723 50  0000 C CNN
+F 2 "" H 7700 3550 50  0001 C CNN
+F 3 "" H 7700 3550 50  0001 C CNN
+	1    7700 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EF21735
+P 8700 3750
+F 0 "#PWR?" H 8700 3600 50  0001 C CNN
+F 1 "+3.3V" H 8715 3923 50  0000 C CNN
+F 2 "" H 8700 3750 50  0001 C CNN
+F 3 "" H 8700 3750 50  0001 C CNN
+	1    8700 3750
+	1    0    0    -1  
+$EndComp
+Text GLabel 8800 4200 2    50   Input ~ 0
+VDD
+$Comp
+L power:+3.3V #PWR?
+U 1 1 5EF22052
+P 8700 2850
+F 0 "#PWR?" H 8700 2700 50  0001 C CNN
+F 1 "+3.3V" H 8715 3023 50  0000 C CNN
+F 2 "" H 8700 2850 50  0001 C CNN
+F 3 "" H 8700 2850 50  0001 C CNN
+	1    8700 2850
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5EF22A05
+P 8500 2500
+F 0 "#PWR?" H 8500 2250 50  0001 C CNN
+F 1 "GND" H 8505 2327 50  0000 C CNN
+F 2 "" H 8500 2500 50  0001 C CNN
+F 3 "" H 8500 2500 50  0001 C CNN
+	1    8500 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8700 2850 9050 2850
+Wire Wire Line
+	8500 2500 8900 2500
+Wire Wire Line
+	8900 2500 8900 2750
+Wire Wire Line
+	8900 2750 9050 2750
+Text GLabel 9050 2950 0    50   Input ~ 0
+SDIO
+Text GLabel 5150 3650 0    50   Input ~ 0
+SDIO
+Text GLabel 5150 3750 0    50   Input ~ 0
+SCLK
+Text GLabel 9050 3050 0    50   Input ~ 0
+SCLK
+Text GLabel 9050 3150 0    50   Input ~ 0
+RST
+Text GLabel 5150 3450 0    50   Input ~ 0
+RST
+Text GLabel 5150 3550 0    50   Input ~ 0
+MOTSWK
+Text GLabel 9050 3250 0    50   Input ~ 0
+MOTSWK
+$EndSCHEMATC
