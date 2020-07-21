@@ -1,6 +1,40 @@
 EESchema-LIBRARY Version 2.4
 #encoding utf-8
 #
+# 2019-05-Week-1-Footprint-Test-and-Breakout-rescue_5_Way_Tac_Switch_SMD-switches_inputs
+#
+DEF 2019-05-Week-1-Footprint-Test-and-Breakout-rescue_5_Way_Tac_Switch_SMD-switches_inputs SW 0 40 Y Y 1 F N
+F0 "SW" 150 -100 50 H V C CNN
+F1 "2019-05-Week-1-Footprint-Test-and-Breakout-rescue_5_Way_Tac_Switch_SMD-switches_inputs" 0 350 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+P 2 0 1 0 250 50 50 200 N
+X COM 1 450 50 200 L 50 50 1 1 I
+X LEFT 2 -450 200 200 R 50 50 1 1 I
+X CNTR 3 -450 100 200 R 50 50 1 1 I
+X UP 4 -450 0 200 R 50 50 1 1 I
+X RIGHT 5 -450 -100 200 R 50 50 1 1 I
+X DOWN 6 -450 -200 200 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
+# 2019-05-Week-1-Footprint-Test-and-Breakout-rescue_Rocker_SMD-switches_inputs
+#
+DEF 2019-05-Week-1-Footprint-Test-and-Breakout-rescue_Rocker_SMD-switches_inputs SW 0 40 Y Y 1 F N
+F0 "SW" 0 -300 50 H V C CNN
+F1 "2019-05-Week-1-Footprint-Test-and-Breakout-rescue_Rocker_SMD-switches_inputs" 0 300 50 H V C CNN
+F2 "" -100 0 50 H I C CNN
+F3 "" -100 0 50 H I C CNN
+DRAW
+P 2 0 1 0 250 0 100 150 N
+X COM 2 450 0 200 L 50 50 1 1 I
+X UP 3 -400 150 200 R 50 50 1 1 I
+X CLK 4 -400 0 200 R 50 50 1 1 I
+X DOWN 5 -400 -150 200 R 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
 # Connector_Conn_01x06_Male
 #
 DEF Connector_Conn_01x06_Male J 0 40 Y N 1 F N
@@ -43,40 +77,6 @@ F3 "" 0 0 50 H I C CNN
 DRAW
 P 6 0 1 0 0 0 0 -50 50 -50 0 -100 -50 -50 0 -50 N
 X GND 1 0 0 0 D 50 50 1 1 W N
-ENDDRAW
-ENDDEF
-#
-# switches_inputs_5_Way_Tac_Switch_SMD
-#
-DEF switches_inputs_5_Way_Tac_Switch_SMD SW 0 40 Y Y 1 F N
-F0 "SW" 150 -100 50 H V C CNN
-F1 "switches_inputs_5_Way_Tac_Switch_SMD" 0 350 50 H V C CNN
-F2 "" 0 0 50 H I C CNN
-F3 "" 0 0 50 H I C CNN
-DRAW
-P 2 0 1 0 250 50 50 200 N
-X COM 1 450 50 200 L 50 50 1 1 I
-X LEFT 2 -450 200 200 R 50 50 1 1 I
-X CNTR 3 -450 100 200 R 50 50 1 1 I
-X UP 4 -450 0 200 R 50 50 1 1 I
-X RIGHT 5 -450 -100 200 R 50 50 1 1 I
-X DOWN 6 -450 -200 200 R 50 50 1 1 I
-ENDDRAW
-ENDDEF
-#
-# switches_inputs_Rocker_SMD
-#
-DEF switches_inputs_Rocker_SMD SW 0 40 Y Y 1 F N
-F0 "SW" 0 -300 50 H V C CNN
-F1 "switches_inputs_Rocker_SMD" 0 300 50 H V C CNN
-F2 "" -100 0 50 H I C CNN
-F3 "" -100 0 50 H I C CNN
-DRAW
-P 2 0 1 0 250 0 100 150 N
-X COM 2 450 0 200 L 50 50 1 1 I
-X UP 3 -400 150 200 R 50 50 1 1 I
-X CLK 4 -400 0 200 R 50 50 1 1 I
-X DOWN 5 -400 -150 200 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #

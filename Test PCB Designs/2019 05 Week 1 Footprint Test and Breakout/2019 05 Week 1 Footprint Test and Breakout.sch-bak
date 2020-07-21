@@ -1,5 +1,5 @@
 EESchema Schematic File Version 4
-EELAYER 30 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -14,23 +14,23 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L 2019-05-Week-1-Footprint-Test-and-Breakout-rescue:Rocker_SMD-switches_inputs SW2
+L switches_inputs:Rocker_SMD SW2
 U 1 1 5CD09252
 P 3700 2850
 F 0 "SW2" H 3725 2505 50  0000 C CNN
 F 1 "Rocker_SMD" H 3725 2596 50  0000 C CNN
-F 2 "BVH_Switches:Rocker_SMD" H 3600 2850 50  0001 C CNN
+F 2 "Switches:Rocker_SMD" H 3600 2850 50  0001 C CNN
 F 3 "" H 3600 2850 50  0001 C CNN
 	1    3700 2850
 	-1   0    0    1   
 $EndComp
 $Comp
-L 2019-05-Week-1-Footprint-Test-and-Breakout-rescue:5_Way_Tac_Switch_SMD-switches_inputs SW1
+L switches_inputs:5_Way_Tac_Switch_SMD SW1
 U 1 1 5CD09607
 P 3700 1950
 F 0 "SW1" H 3700 1555 50  0000 C CNN
 F 1 "5_Way_Tac_Switch_SMD" H 3700 1646 50  0000 C CNN
-F 2 "BVH_Switches:5_Way_Tac_Switch_SMD" H 3700 1950 50  0001 C CNN
+F 2 "Switches:5_Way_Tac_Switch_SMD" H 3700 1950 50  0001 C CNN
 F 3 "" H 3700 1950 50  0001 C CNN
 	1    3700 1950
 	-1   0    0    1   

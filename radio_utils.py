@@ -18,7 +18,11 @@ class FrequencyUtils:
 	    50: "6"
 	  }
 
-	  band = bands[frequency_floor]
+	  if frequency_floor in bands:
+	  	band = bands[frequency_floor]
+	  else:
+	  	band = frequency_floor
+	  	print(f"Unknown band: {frequency_floor} - {frequency}")
 
 	  if include_suffix:
 	  	band += "m"

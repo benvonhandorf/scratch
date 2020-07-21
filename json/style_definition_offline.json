@@ -1,0 +1,38 @@
+{
+  "version": 8,
+  "sources": {
+    "offline-tiles": {
+      "type": "raster",
+      "tiles": [
+        "http://localhost:55555/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256,
+      "attribution":
+      "Test map tiles"
+    }
+    ,"online-tiles": {
+      "type": "raster",
+      "tiles": [
+        "https://tiles-osm.alltrails.com/{z}/{x}/{y}.png"
+      ],
+      "tileSize": 256,
+      "attribution":
+      "Test map tiles"
+    }
+  },
+  "layers": [
+    {
+      "id": "simple-tiles",
+      "type": "raster",
+      "source": "online-tiles",
+      "minzoom": 0,
+      "maxzoom": 22
+    },{
+      "id": "simple-tiles",
+      "type": "raster",
+      "source": "offline-tiles",
+      "minzoom": 0,
+      "maxzoom": 22
+    }
+  ]
+}
