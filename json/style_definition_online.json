@@ -17,7 +17,7 @@
       "type": "raster",
       "source": "online-tiles",
       "minzoom": 0,
-      "maxzoom": 22
+      "maxzoom": 19
     }
   ]
 }
