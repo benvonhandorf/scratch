@@ -1,2 +1,6 @@
 .localenv.sh
 **.mp3
+**script*.txt
+**polly_cache*
+**__pycache__
+**.wav

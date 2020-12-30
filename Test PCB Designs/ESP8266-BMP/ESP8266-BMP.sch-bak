@@ -102,13 +102,13 @@ Text GLabel 6300 3000 2    50   Input ~ 0
 TXD
 Text GLabel 6300 3100 2    50   Input ~ 0
 RXD
-Text GLabel 6300 3300 2    50   Input ~ 0
+Text GLabel 6300 3200 2    50   Input ~ 0
 TMS
 Text GLabel 4500 3500 0    50   Input ~ 0
 TDI
 Text GLabel 4500 3600 0    50   Input ~ 0
 TDO
-Text GLabel 6300 3200 2    50   Input ~ 0
+Text GLabel 6300 3300 2    50   Input ~ 0
 TCK
 Text Notes 8450 3450 0    50   ~ 0
 Cortex Pinout\nTMS -> SWDIO\nTCK -> SWDCK\nTDO -> SWO

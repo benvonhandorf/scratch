@@ -28,6 +28,8 @@ if __name__ == "__main__":
 				help="Call to import")
 		argument_parser.add_argument('--antenna', default="20m dipole",
 				help="Call to import")
+		argument_parser.add_argument('--log', action='store_true', default='store_false',
+				help="Retain downloaded data")
 
 		args = argument_parser.parse_args()
 
@@ -40,12 +42,12 @@ if __name__ == "__main__":
 
 		cacheData = None
 
-		try:
-				cacheFile = open("query_cache.html", "r")
+		# try:
+		# 		cacheFile = open("query_cache.html", "r")
 
-				cacheData = cacheFile.read()
-		except FileNotFoundError:
-				pass
+		# 		cacheData = cacheFile.read()
+		# except FileNotFoundError:
+		# 		pass
 
 		if cacheData is None or len(cacheData) == 0:
 				print("Retrieving data")
@@ -64,8 +66,10 @@ if __name__ == "__main__":
 
 				response = requests.post('http://wsprnet.org/drupal/wsprnet/spotquery', data=formData)
 
-				with open("{}.log".format(datetime.now().isoformat()), "w") as resultFile:
-						resultFile.write(response.text)
+				if args.log == True:
+					print("Saving data")
+					with open("{}.log".format(datetime.now().isoformat()), "w") as resultFile:
+							resultFile.write(response.text)
 		else:
 				response = CacheResponse(cacheData)
 
@@ -113,7 +117,7 @@ if __name__ == "__main__":
 
 		print("Importing {} entries".format(len(entries)))
 
-		influxClient = InfluxDBClient(influxHost, username=influxUser, password=influxPassword)
+		influxClient = InfluxDBClient(host=influxHost, username=influxUser, password=influxPassword)
 		influxClient.switch_database('radio')
 		influxClient.write_points(entries)
 

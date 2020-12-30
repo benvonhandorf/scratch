@@ -2,12 +2,12 @@ import boto3
 from pathlib import Path
 
 class PollyApi:
-    def __init__(self, aws_access_key_id, aws_secret_access_key):
+    def __init__(self, aws_access_key_id, aws_secret_access_key, voice="Joanna"):
         self.polly_client = boto3.Session(aws_access_key_id=aws_access_key_id,
                                 aws_secret_access_key=aws_secret_access_key,
                                 region_name='us-west-2').client('polly')
 
-        self.voice_id = "Joanna"
+        self.voice_id = voice
 
         self.cache_directory = f"polly_cache_{self.voice_id.lower()}"
 
@@ -50,7 +50,7 @@ class PollyApi:
         return file_path
 
     def filename_for(self, morse_code_text, is_characters):
-        filename = morse_code_text.strip().replace(" ", "_").replace("/", "slash")
+        filename = str(hash(morse_code_text.strip()))
 
         if is_characters:
             filename = "characters_" + filename
