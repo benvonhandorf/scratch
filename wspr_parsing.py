@@ -84,9 +84,9 @@ if __name__ == "__main__":
 		for row in rows:
 				dataItems = row.find_all('td')
 
-				if len(dataItems) == 11:
+				if len(dataItems) == 12:
 						# Appears to be a valid data row
-						spottimeraw, callsign, frequency, snr, drift, grid, power, spotter, spotgrid, distance, azimuth = dataItems
+						spottimeraw, callsign, frequency, snr, drift, grid, power, spotter, spotgrid, distance, azimuth, mode = dataItems
 
 						spottime = datetime.strptime(spottimeraw.text.strip(), '%Y-%m-%d %H:%M')
 
@@ -99,7 +99,8 @@ if __name__ == "__main__":
 														'band': FrequencyUtils.band_for_frequency(float(frequency.text.strip()), False),
 														'antenna': antenna,
 														'type': 'wspr',
-														'power': float(power.text.strip())
+														'power': float(power.text.strip()),
+														'mode': float(mode.text.strip())
 														}
 						entry['fields'] = {
 														'power': float(power.text.strip()),

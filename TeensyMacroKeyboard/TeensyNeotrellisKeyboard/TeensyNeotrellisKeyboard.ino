@@ -1,3 +1,4 @@
+#include <Encoder.h>
 #include "Adafruit_NeoTrellis.h"
 
 Adafruit_NeoTrellis trellis;
@@ -76,7 +77,7 @@ struct KeyData KEYS[16] = {
   },
 };
 
-Encoder myEnc(5, 6);
+Encoder myEnc(14, 15);
 
 const int CHANNEL = 1;
 
@@ -95,7 +96,6 @@ TrellisCallback event(keyEvent event) {
   
   return 0;
 }
-
 
 void setup() {
 Serial.begin(115200);
@@ -133,8 +133,66 @@ Serial.begin(115200);
 
 }
 
+long encoderPosition = -999;
+unsigned long lastEncoder = 0;
+int lastEncoderPosition = -1;
+
+void handleEncoderDisplay(bool incrementing) {
+    if(lastEncoderPosition != -1) {
+    trellis.pixels.setPixelColor(lastEncoderPosition, 0x000000);
+  }
+    
+  if(incrementing) {
+    lastEncoderPosition++;
+  } else {
+    lastEncoderPosition--;
+  }
+
+  if(lastEncoderPosition >= trellis.pixels.numPixels()) {
+    lastEncoderPosition = 0;
+  } else if(lastEncoderPosition < 0) {
+    lastEncoderPosition = trellis.pixels.numPixels() - 1;
+  }
+
+  struct KeyData *key = &KEYS[lastEncoderPosition];
+  trellis.pixels.setPixelColor(lastEncoderPosition, trellis.pixels.Color(key->color[0] / 8, key->color[1] / 8, key->color[2] /8));
+  trellis.pixels.show();
+}
+
+void updateEncoder() {
+  long newPosition = myEnc.read();
+  
+  if (newPosition != encoderPosition) {
+    int16_t delta = newPosition - encoderPosition;
+    
+    handleEncoderDisplay(newPosition > encoderPosition);
+
+    uint8_t midiValue = 64;
+
+    if(delta > 0) {
+      midiValue = min(delta + 64, 127);
+    } else {
+      midiValue = max(delta + 64, 0);
+    }
+
+    usbMIDI.sendControlChange(0x51, midiValue, CHANNEL);
+    
+    encoderPosition = newPosition;
+    lastEncoder = millis();
+    Serial.println(newPosition);
+  } else if(lastEncoder != 0 && millis() > (lastEncoder + 1000)) {
+    for(uint16_t i=0; i<trellis.pixels.numPixels(); i++) {
+      trellis.pixels.setPixelColor(i, 0x000000);
+    }
+    trellis.pixels.show();
+    lastEncoderPosition = -1;
+  }
+}
+
 void loop() {
   if(!digitalRead(INT_PIN)){
     trellis.read(false);
   }
+
+  updateEncoder();
 }
